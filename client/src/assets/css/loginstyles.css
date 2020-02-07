@@ -1,70 +1,70 @@
-.login-card{
-    padding: 40px;
-    margin-top: 70px;
+.login-card {
+  padding: 40px;
+  margin-top: 70px;
 }
-.login-header{
-    padding-top: 20px;
+.login-header {
+  padding-top: 20px;
 }
-.login-lock-icon{
-   margin-left: 150px;
-   margin-top: 70px;
+.login-lock-icon {
+  margin-left: 150px;
+  margin-top: 70px;
 }
 
-.forgot-link-style{
-    text-decoration: none;
-    color: blue;
+.forgot-link-style {
+  text-decoration: none;
+  color: blue;
 }
-.login-button-style{
-    background-color: #009933 !important;
-    color: #fff !important;
-    width: auto !important;
+.login-button-style {
+  background-color: #009933 !important;
+  color: #fff !important;
+  width: auto !important;
 }
-.login-card-align{
-    margin-top: 64px;
+.login-card-align {
+  margin-top: 64px;
 }
-.login-button-align{
-    padding-top: 20px;
-    padding-left: 50px;
+.login-button-align {
+  padding-top: 20px;
+  padding-left: 50px;
 }
-.login-lock-icon > div > svg{
-    color:#009933 !important;
+.login-lock-icon > div > svg {
+  color: #009933 !important;
 }
-.login-lock-icon > .MuiAvatar-colorDefault{
-    background-color: #fff !important;
+.login-lock-icon > .MuiAvatar-colorDefault {
+  background-color: #fff !important;
 }
-.login-background{
-    background-image: url("../images/brand/layout_pattern.png"),
-    linear-gradient(226deg, rgb(15, 114, 68) 48%, rgb(17, 97, 73) 100%) !important;
-    min-height: 100vh;
-  }
-  .login-logo-styles{
-    padding-left: 20px;
-  }
-  .login-field-style {
-      padding: 20px;
-      padding-bottom: 0px;
-      padding-top: 0px;
-      padding-left: 50px;
-  }
-  .login-brand-styles{
-      padding-left: 30px;
-      padding-top: 30px;
-      width: 50%;
-  }
-.login-body-styles{
-    padding-top: 40px;
+.login-background {
+  background-image: url("../images/brand/layout_pattern.png"),
+    radial-gradient(closest-corner, rgb(15, 114, 68) 54%, rgb(17, 97, 73) 100%) !important;
+  min-height: 100vh;
 }
-.login-textbox-style{
-    padding-top: 40px;
+.login-logo-styles {
+  padding-left: 20px;
+}
+.login-field-style {
+  padding: 20px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  padding-left: 50px;
+}
+.login-brand-styles {
+  padding-left: 30px;
+  padding-top: 30px;
+  width: 50%;
+}
+.login-body-styles {
+  padding-top: 40px;
+}
+.login-textbox-style {
+  padding-top: 40px;
 }
 .login-body-styles > h1 {
-    font-weight: bold;
-    font-size: 23px;
-    padding-left: 50px;
+  font-weight: bold;
+  font-size: 23px;
+  padding-left: 50px;
 }
-.animate-styles > canvas{
-    height: 100vh !important;
+.animate-styles > canvas {
+  height: 100vh !important;
 }
-.forgot-grid{
-    padding-top: 25px !important;
+.forgot-grid {
+  padding-top: 25px !important;
 }
