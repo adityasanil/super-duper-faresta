@@ -6,19 +6,36 @@ import HomeIcon from "@material-ui/icons/Home";
 import { Link } from "react-router-dom";
 import PageviewIcon from "@material-ui/icons/Pageview";
 
-export const mainListItems = (
-  <div>
-    <ListItem button component={Link} to="/dashboard/">
+
+export default function ListDrawerItems() {
+  const [selectedIndex, setSelectedIndex] = React.useState(1);
+
+  const handleListItemClick = (event, index) => {
+    setSelectedIndex(index);
+  };
+
+  return (
+    <div>
+    <ListItem
+     button
+     component={Link} to="/dashboard/"
+     selected={selectedIndex === 0}
+     onClick={event => handleListItemClick(event, 0)}>
       <ListItemIcon>
         <HomeIcon />
       </ListItemIcon>
       <ListItemText primary="Home" />
     </ListItem>
-    <ListItem button component={Link} to="/dashboard/viewData">
+    <ListItem
+     button
+     component={Link} to="/dashboard/viewData"
+     selected={selectedIndex === 1}
+     onClick={event => handleListItemClick(event, 1)}>
       <ListItemIcon>
         <PageviewIcon />
       </ListItemIcon>
       <ListItemText primary="View Data" />
     </ListItem>
   </div>
-);
+  );
+}
