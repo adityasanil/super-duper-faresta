@@ -8,31 +8,56 @@ import PageviewIcon from "@material-ui/icons/Pageview";
 import HelpIcon from "@material-ui/icons/Help";
 import CropFreeIcon from "@material-ui/icons/CropFree";
 
-export const mainListItems = (
-  <div>
-    <ListItem button component={Link} to="/dashboard/">
+export default function ListDrawerItems() {
+  const [selectedIndex, setSelectedIndex] = React.useState(1);
+
+  const handleListItemClick = (event, index) => {
+    setSelectedIndex(index);
+  };
+
+  return (
+    <div>
+     <ListItem
+      button
+      component={Link} to="/dashboard/"
+      selected={selectedIndex === 0}
+      onClick={event => handleListItemClick(event, 0)}
+     >
       <ListItemIcon>
-        <HomeIcon />
-      </ListItemIcon>
-      <ListItemText primary="Home" />
-    </ListItem>
-    <ListItem button component={Link} to="/dashboard/viewData">
-      <ListItemIcon>
-        <PageviewIcon />
-      </ListItemIcon>
-      <ListItemText primary="View Data" />
-    </ListItem>
-    <ListItem button component={Link} to="/dashboard/qrList">
-      <ListItemIcon>
-        <CropFreeIcon />
-      </ListItemIcon>
-      <ListItemText primary="QR Codes" />
-    </ListItem>
-    <ListItem button component={Link} to="/dashboard/guide">
-      <ListItemIcon>
-        <HelpIcon />
-      </ListItemIcon>
-      <ListItemText primary="Guide" />
-    </ListItem>
+         <HomeIcon />
+       </ListItemIcon>
+       <ListItemText primary="Home" />
+     </ListItem>
+     <ListItem
+      button
+      component={Link} to="/dashboard/viewData"
+      selected={selectedIndex === 1}
+      onClick={event => handleListItemClick(event, 1)}>
+       <ListItemIcon>
+         <PageviewIcon />
+       </ListItemIcon>
+       <ListItemText primary="View Data" />
+     </ListItem>
+     <ListItem
+      button
+      component={Link} to="/dashboard/qrList"
+      selected={selectedIndex === 2}
+      onClick={event => handleListItemClick(event, 2)}>
+       <ListItemIcon>
+         <CropFreeIcon />
+       </ListItemIcon>
+       <ListItemText primary="QR Codes" />
+     </ListItem>
+     <ListItem 
+      button
+      component={Link} to="/dashboard/guide"
+      selected={selectedIndex === 3}
+      onClick={event => handleListItemClick(event, 3)}>
+       <ListItemIcon>
+         <HelpIcon />
+       </ListItemIcon>
+       <ListItemText primary="Guide" />
+     </ListItem>
   </div>
-);
+
+  )}

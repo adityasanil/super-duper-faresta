@@ -17,79 +17,97 @@ import CropFreeIcon from "@material-ui/icons/CropFree";
 
 import { Link } from "react-router-dom";
 
-export const mainListItems = (
-  <div>
-    <ListItem button component={Link} to="/dashboard/">
+export default function ListDrawerItems() {
+  const [selectedIndex, setSelectedIndex] = React.useState(1);
+
+  const handleListItemClick = (event, index) => {
+    setSelectedIndex(index);
+  };
+
+  return (
+   <div>
+    <ListItem
+      button
+      component={Link} to="/dashboard/"
+      selected={selectedIndex === 0}
+      onClick={event => handleListItemClick(event, 0)}
+     >
       <ListItemIcon>
         <HomeIcon />
       </ListItemIcon>
       <ListItemText primary="Home" />
     </ListItem>
-    <ListItem button component={Link} to="/dashboard/addUsers">
+    <ListItem
+      button
+      component={Link} to="/dashboard/addUsers"
+      selected={selectedIndex === 1}
+      onClick={event => handleListItemClick(event, 1)} >
       <ListItemIcon>
         <PersonAddIcon />
       </ListItemIcon>
       <ListItemText primary="Add Users" />
     </ListItem>
-    <ListItem button component={Link} to="/dashboard/usersList">
+    <ListItem
+      button
+      component={Link} to="/dashboard/usersList"
+      selected={selectedIndex === 2}
+      onClick={event => handleListItemClick(event, 2)}>
       <ListItemIcon>
         <PeopleIcon />
       </ListItemIcon>
       <ListItemText primary="Users List" />
     </ListItem>
-    <ListItem button component={Link} to="/dashboard/auditReport">
+    <ListItem
+      button
+      component={Link} to="/dashboard/auditReport"
+      selected={selectedIndex === 3}
+      onClick={event => handleListItemClick(event, 3)}>
       <ListItemIcon>
         <ReceiptIcon />
       </ListItemIcon>
       <ListItemText primary="Audit Report" />
     </ListItem>
-    <ListItem button component={Link} to="/dashboard/uploadData">
+    <ListItem
+      button
+      component={Link} to="/dashboard/uploadData"
+      selected={selectedIndex === 4}
+      onClick={event => handleListItemClick(event, 4)}>
       <ListItemIcon>
         <CloudUploadIcon />
       </ListItemIcon>
       <ListItemText primary="Upload Assets" />
     </ListItem>
-    <ListItem button component={Link} to="/dashboard/viewData">
+    <ListItem
+      button
+      component={Link} to="/dashboard/viewData"
+      selected={selectedIndex === 5}
+      onClick={event => handleListItemClick(event, 5)}>
       <ListItemIcon>
         <PageviewIcon />
       </ListItemIcon>
       <ListItemText primary="View Data" />
     </ListItem>
-    <ListItem button component={Link} to="/dashboard/qrList">
+    <ListItem 
+      button
+      component={Link} to="/dashboard/qrList"
+      selected={selectedIndex === 6}
+      onClick={event => handleListItemClick(event, 6)}>
       <ListItemIcon>
         <CropFreeIcon />
       </ListItemIcon>
       <ListItemText primary="QR Codes" />
     </ListItem>
-    <ListItem button component={Link} to="/dashboard/guide">
+    <ListItem 
+      button
+      component={Link} to="/dashboard/guide"
+      selected={selectedIndex === 7}
+      onClick={event => handleListItemClick(event, 7)}>
       <ListItemIcon>
         <HelpIcon />
       </ListItemIcon>
       <ListItemText primary="Guide" />
     </ListItem>
   </div>
-);
 
-export const secondaryListItems = (
-  <div>
-    <ListSubheader inset>Saved reports</ListSubheader>
-    <ListItem button>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Current month" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Last quarter" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Year-end sale" />
-    </ListItem>
-  </div>
-);
+  );
+}

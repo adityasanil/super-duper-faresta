@@ -25,6 +25,7 @@ import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
 import { Link } from "react-router-dom";
 
 import { mainListItems } from "./components/listDrawerItems";
+import ListDrawerItems from './components/listDrawerItems';
 
 const drawerWidth = 220;
 
@@ -254,7 +255,9 @@ export default function Dashboard({ user, children }) {
           </IconButton>
         </div>
         <Divider />
-        <List>{mainListItems}</List>
+        <List>
+          <ListDrawerItems />
+        </List>
         <Divider />
       </Drawer>
       <main className={classes.content}>
@@ -264,16 +267,6 @@ export default function Dashboard({ user, children }) {
             <Grid item xs={12}>
               <Paper className={classes.paper}>{children}</Paper>
             </Grid>
-            {/* <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
-                <Deposits />
-              </Paper>
-            </Grid>
-            <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                <Orders />
-              </Paper>
-            </Grid> */}
           </Grid>
         </Container>
       </main>
