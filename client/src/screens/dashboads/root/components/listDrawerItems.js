@@ -8,9 +8,6 @@ import { Link } from "react-router-dom";
 
 export const mainListItems = (
   <div>
-    <ListItem button>
-      <ListItemText primary="Root" />
-    </ListItem>
     <ListItem button component={Link} to="/dashboard/">
       <ListItemIcon>
         <HomeIcon style={{ color: "#26a69a" }} />
