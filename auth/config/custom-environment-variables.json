@@ -1,0 +1,5 @@
+{
+  "dbPassword": "far_dbPassword",
+  "jwtPrivateKey": "far_jwtPrivateKey",
+  "mailPassword": "far_mailPassword"
+}

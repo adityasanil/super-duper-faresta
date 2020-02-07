@@ -1,0 +1,7 @@
+{
+  "dbPassword": "far_dbPassword",
+  "jwtPrivateKey": "far_jwtPrivateKey",
+  "mailPassword": "far_mailPassword",
+  "accessKeyIdAws": "far_accessKeyIdAws",
+  "secretKeyAws": "far_secretKeyAws"
+}

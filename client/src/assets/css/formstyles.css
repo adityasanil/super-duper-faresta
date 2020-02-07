@@ -1,0 +1,228 @@
+.select-width {
+  min-width: 215px !important;
+}
+.form-padding {
+  padding-top: 27px !important;
+}
+.form-left-padding {
+  padding-left: 0px !important;
+}
+
+.table-test {
+  overflow-x: scroll;
+  overflow-y: scroll;
+}
+.test-table > div > div {
+  overflow: scroll !important;
+}
+.jsonCell {
+  text-align: left;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 15px;
+  padding-right: 6px;
+  font-weight: 500;
+}
+.jsonColumn {
+  padding-left: 20px;
+  padding-right: 20px;
+  /* padding-top: 55px; */
+  background: #effbed;
+  font-weight: 900;
+}
+.jsonEven {
+  background: #eae9e9;
+}
+.json-to-table {
+  /* padding-left:8px !important; */
+  padding-right: 8px !important;
+  padding-top: 30px;
+  text-align: center;
+}
+.json-to-table td {
+  text-align: center;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+.test-table {
+  padding-top: 10px;
+}
+/* .jsonColumn_NoofdaysalreadyusedtillMarch312014{
+    column-width: 40px;
+} */
+.button-padding {
+  padding-top: 20px;
+}
+.button-styling > button {
+  background-color: #469a35;
+  font-size: 19px;
+  border-radius: 6px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  font-weight: 500;
+}
+.button-align {
+  text-align: center;
+}
+.button-background {
+  background-color: white !important;
+}
+.icon-background {
+  color: #469a35;
+  height: 22px;
+  width: 22px;
+}
+.card-style > div > div > a > button > div > h2 {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
+  color: #303f9f;
+}
+.asset-list-styles {
+  padding-bottom: 18px;
+}
+.list-style {
+  list-style-type: square;
+  font-weight: 600;
+}
+.asset-info-style {
+  font-weight: 600;
+}
+.upload-btn-style > form > button {
+  background-color: #f50057;
+  font-size: 15px;
+  border-radius: 6px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  font-weight: bold;
+}
+.upload-btn-style > form > div {
+  padding-bottom: 20px;
+}
+.asset-header-style {
+  font-size: 20px;
+  font-weight: bolder;
+  padding-top: 10px;
+  text-align: center;
+}
+.email-field-styles {
+  padding-bottom: 20px !important;
+  padding-top: 5px !important;
+}
+.icon-padding-style {
+  padding-right: 4px;
+}
+.view-data-grid-style {
+  padding-top: 20px;
+}
+.asset-info-list-style {
+  padding-left: 10px;
+}
+.asset-list-odd {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.asset-info-list-style {
+  padding-top: 50px !important;
+}
+.asset-text-field-style {
+  padding-top: 14px !important;
+  padding-bottom: 20px !important;
+}
+.remark-field-background
+  > .MuiOutlinedInput-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
+  border-color: #fdf502 !important;
+  border-width: 4px;
+}
+.remark-field-background > div > .MuiOutlinedInput-notchedOutline {
+  border-color: #fdf502;
+  border-width: 2px;
+  border-radius: 8px;
+}
+.select-button-padding {
+  padding-top: 30px !important ;
+}
+.select-button-styles {
+  width: 40%;
+  height: 80%;
+  font-size: 15px;
+  background-color: white;
+  color: #787878;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+.asset-save-button-style {
+  background-color: #009933 !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  color:white !important;
+  font-weight: bold !important;
+}
+.qr-grid-style {
+  padding-top: 40px !important;
+  text-align: center;
+}
+.button-font-style > span {
+  font-weight: bold;
+}
+.print-button-font-style > span > p {
+  font-weight: bold !important;
+}
+.asset-expansion-list-style > a {
+  text-decoration: none !important;
+  color: black !important;
+  font-weight: 500 !important;
+}
+.asset-card-font-style > div > div > a > button > div > h2 {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
+.auditorRemark-field-background
+  > .MuiOutlinedInput-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
+  border-color: #f50057 !important;
+  border-width: 4px;
+}
+.auditorRemark-field-background > div > .MuiOutlinedInput-notchedOutline {
+  border-color: #f50057;
+  border-width: 2px;
+  border-radius: 8px;
+}
+.select-button-org-styles{
+  height: 50px;
+  font-size: 17px;
+  background-color: white;
+  color: #787878;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  min-width: 240px !important;
+}
+.upload-btn-style > form > div > div{
+    margin-right: 500px !important;
+    margin-top: 20px !important;
+}
+.save-button-align-style{
+    text-align: center;
+}
+.asset-header-style > span {
+    text-decoration: underline;
+}
+.upload-grid-align{
+    text-align: center;
+}
+.upload-btn-style{
+    padding-top: 20px;
+}
+
+.send-email-button-style{
+    font-weight: bold !important;
+}
+.email-field-align > div {
+    padding-right: 25px;
+}
+.iam-select-style{
+  padding-top: 30px !important;
+}
