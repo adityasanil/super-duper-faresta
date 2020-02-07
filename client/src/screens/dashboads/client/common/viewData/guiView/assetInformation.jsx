@@ -94,7 +94,6 @@ class AssetInformation extends Form {
     });
   };
 
-  
   handleSave = async () => {
     const data = { ...this.state.data };
 
@@ -119,7 +118,7 @@ class AssetInformation extends Form {
       vat
     } = this.state.data;
 
-    const image=this.state.data.imageUri;
+    const image = this.state.data.imageUri;
 
     const { user } = this.props;
 
@@ -130,50 +129,45 @@ class AssetInformation extends Form {
           <Box>
             <Grid container direction="column" justify="center">
               <Grid container spacing={3}>
-              <Grid item xs={12} md={8} lg={8} alignItems="center" alignContent="center">
-                <div id="printme">
-                  <QRCodeGenerator
-                    id={id}
-                    particulars={particulars}
-                    other={other}
-                    location={location}
-                    quantity={quantity}
-                    category={category}
-                    vat={vat}
-                    keyValue={dbName}
-                  />
-                </div>
-                <button onClick={() => this.printOrder()}>Print</button>
-                <div className="upload-btn-style">
-                  <ImageUpload
-                    onChangeHandler={this.onChangeHandler}
-                    onClickHandler={this.onClickHandler}
-                    loaded={this.state.loaded}
-                  />
-                </div>
-              </Grid>
-              <Grid item xs={12} md={4} lg={4}>
-                <span>
-                {/* <Button
-                 href={this.state.imageName}
-                 color="transparent"
-                 target="_blank"
-                 download>Download
-                 </Button> */}
-                 <div>
-                 <ModalImage
-                  small={image}
-                  large={image}
-                  //alt="Add Image to View"
-                 />
-                 </div>
-                 <div>
-                   <span>
-                     Image Preview
-                   </span>
-                 </div>
-                </span>
-              </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  md={8}
+                  lg={8}
+                  alignItems="center"
+                  alignContent="center"
+                >
+                  <div id="printme">
+                    <QRCodeGenerator
+                      id={id}
+                      particulars={particulars}
+                      other={other}
+                      location={location}
+                      quantity={quantity}
+                      category={category}
+                      vat={vat}
+                      keyValue={dbName}
+                    />
+                  </div>
+                  <button onClick={() => this.printOrder()}>Print</button>
+                  <div className="upload-btn-style">
+                    <ImageUpload
+                      onChangeHandler={this.onChangeHandler}
+                      onClickHandler={this.onClickHandler}
+                      loaded={this.state.loaded}
+                    />
+                  </div>
+                </Grid>
+                <Grid item xs={12} md={4} lg={4}>
+                  <span>
+                    <div>
+                      <ModalImage small={image} large={image} />
+                    </div>
+                    <div>
+                      <span>Image Preview</span>
+                    </div>
+                  </span>
+                </Grid>
               </Grid>
               <Grid>
                 <AssetInfoFields
@@ -190,7 +184,7 @@ class AssetInformation extends Form {
                   startIcon={<SaveIcon />}
                   onClick={this.handleSave}
                   disabled={
-                    user.role == "junior" || user.role == "auditor"
+                    user.role === "junior" || user.role === "auditor"
                       ? true
                       : false
                   }

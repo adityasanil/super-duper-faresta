@@ -4,12 +4,7 @@ import {
   Box,
   withStyles,
   Grid,
-  Container,
-  Button,
-  Select,
-  MenuItem,
-  FormControl,
-  InputLabel
+  Container
 } from "@material-ui/core";
 
 import { registerSenior } from "services/createCallsRoot";

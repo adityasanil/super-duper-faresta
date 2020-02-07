@@ -1,12 +1,11 @@
-import React, { Component, Fragment, lazy, Suspense } from "react";
+import React, { Component, Fragment, Suspense } from "react";
 import {
   Button,
   Typography,
   Box,
   withStyles,
   Container,
-  Grid,
-  Card
+  Grid
 } from "@material-ui/core";
 
 import Print from "react-to-print";
@@ -154,7 +153,6 @@ class QRCodeList extends Component {
                     </Button>
                   </a>
                 )}
-                // onBeforePrint={this.setDescription}
                 content={() => this.componentRef}
               />
               <Suspense fallback={<Loader />}>
