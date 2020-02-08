@@ -1,7 +1,7 @@
 import http from "./httpServices";
-import { apiUrl } from "../config.json";
+import config from "../config";
 
-const apiUrlToSaveAssets = apiUrl + "/saveAssets";
+const apiUrlToSaveAssets = config.apiUrl + "/saveAssets";
 
 export function saveAssetsData(data) {
   const result = http.post(apiUrlToSaveAssets, data);
@@ -13,7 +13,6 @@ export function sendEditedData(data) {
   console.log(data);
   // return result;
 }
-
 
 export default {
   saveAssetsData

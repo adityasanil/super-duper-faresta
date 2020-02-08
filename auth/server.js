@@ -44,7 +44,7 @@ mongoose
   .catch(err => console.log("Could not connect to auth database: ", err));
 
 // Routes
-app.use("/auth", auth);
+app.use("/login", auth);
 app.use("/register", registerTenant);
 app.use("/getAllTenants", getAllTenants);
 app.use("/regsiterClient", regsiterClient);

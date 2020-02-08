@@ -1,7 +1,7 @@
 import http from "./httpServices";
-import { apiUrl } from "../config.json";
+import config from "../config";
 
-const sendMailUrl = apiUrl + "/sendMail";
+const sendMailUrl = config.apiUrl + "/sendMail";
 
 export async function sendMail(email, password) {
   await http.post(sendMailUrl, { email, password });

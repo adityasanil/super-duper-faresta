@@ -15,7 +15,7 @@ router.post("/", async (req, res) => {
       useUnifiedTopology: true,
       useCreateIndex: true
     })
-    .then(() => console.log(`Connected to api database..`))
+    .then(() => console.log(`Connected to ${db} api database..`))
     .catch(err => console.log("Could not connect to api database: ", err));
   res.status(200).send("connected");
 });

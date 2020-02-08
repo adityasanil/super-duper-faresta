@@ -44,7 +44,6 @@ class Login extends Form {
     try {
       const { data } = this.state;
       const result = await login(data.email, data.password);
-      console.log(result);
       const { orgDatabase } = jwtDecode(result.data);
       const connectData = await connect(orgDatabase);
       if (result.status === 200 && connectData.status === 200) {
@@ -79,9 +78,9 @@ class Login extends Form {
                         required
                         id="email"
                         name="email"
-                        placeholder="email"
+                        placeholder="Email"
                         autoComplete="email"
-                        autoFocus={true}
+                        autoFocus
                         onChange={this.handleOnChange}
                         type="email"
                         size="small"
@@ -91,7 +90,7 @@ class Login extends Form {
                       <InputField
                         required
                         name="password"
-                        placeholder="password"
+                        placeholder="Password"
                         type="password"
                         id="password"
                         autoComplete="current-password"
@@ -101,7 +100,7 @@ class Login extends Form {
                     </div>
                     <div className="login-button-align">
                       <Grid container spacing={3} direction="row">
-                        <Grid item xs={12} md={6} lg={6} direction="row">
+                        <Grid item xs={12} md={6} lg={6}>
                           <Button
                             className="login-button-style"
                             type="submit"
@@ -116,7 +115,6 @@ class Login extends Form {
                           xs={12}
                           md={6}
                           lg={6}
-                          direction="row"
                           className="forgot-grid"
                         >
                           <Link

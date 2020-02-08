@@ -1,7 +1,7 @@
 import http from "./httpServices";
-import { authApiUrl } from "../config.json";
+import config from "../config";
 
-const apiToCreateUser = authApiUrl + "/regsiterClient"; // Api url to create a new user
+const apiToCreateUser = config.authApiUrl + "/regsiterClient"; // Api url to create a new user
 
 // Function to create a new User (Junior/Auditor)
 export async function createUser({
