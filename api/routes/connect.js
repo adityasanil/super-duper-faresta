@@ -3,7 +3,6 @@ const router = express.Router();
 const mongoose = require("mongoose");
 
 // Local imports
-// const { dbUriFuncAuth } = require("../services/dbConnectionAuth/dbUri");
 const { dbUriFunc } = require("../services/dbConnectionOrg/dbUriOrg");
 
 router.post("/", async (req, res) => {
@@ -16,8 +15,8 @@ router.post("/", async (req, res) => {
       useUnifiedTopology: true,
       useCreateIndex: true
     })
-    .then(() => console.log(`Connected to database: ${tenantDBUri}..`))
-    .catch(err => console.log("Could not connect to MongoDB: ", err));
+    .then(() => console.log(`Connected to api database..`))
+    .catch(err => console.log("Could not connect to api database: ", err));
   res.status(200).send("connected");
 });
 
