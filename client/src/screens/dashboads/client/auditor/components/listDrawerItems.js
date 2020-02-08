@@ -19,8 +19,8 @@ export default function ListDrawerItems() {
     <ListItem
      button
      component={Link} to="/dashboard/"
-     selected={selectedIndex === 0}
-     onClick={event => handleListItemClick(event, 0)}>
+     selected={selectedIndex === 1}
+     onClick={event => handleListItemClick(event, 1)}>
       <ListItemIcon>
         <HomeIcon />
       </ListItemIcon>
@@ -29,8 +29,8 @@ export default function ListDrawerItems() {
     <ListItem
      button
      component={Link} to="/dashboard/viewData"
-     selected={selectedIndex === 1}
-     onClick={event => handleListItemClick(event, 1)}>
+     selected={selectedIndex === 2}
+     onClick={event => handleListItemClick(event, 2)}>
       <ListItemIcon>
         <PageviewIcon />
       </ListItemIcon>

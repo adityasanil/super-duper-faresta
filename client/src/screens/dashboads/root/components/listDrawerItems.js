@@ -18,8 +18,8 @@ export default function ListDrawerItems() {
       <ListItem 
        button
        component={Link} to="/dashboard/"
-       selected={selectedIndex === 0}
-       onClick={event => handleListItemClick(event, 0)}>
+       selected={selectedIndex === 1}
+       onClick={event => handleListItemClick(event, 1)}>
         <ListItemIcon>
           <HomeIcon style={{ color: "#26a69a" }} />
         </ListItemIcon>
@@ -28,8 +28,8 @@ export default function ListDrawerItems() {
       <ListItem
        button
        component={Link} to="/dashboard/IAM"
-       selected={selectedIndex === 1}
-       onClick={event => handleListItemClick(event, 1)}>
+       selected={selectedIndex === 2}
+       onClick={event => handleListItemClick(event, 2)}>
         <ListItemIcon>
           <PersonAddIcon />
         </ListItemIcon>
@@ -38,8 +38,8 @@ export default function ListDrawerItems() {
       <ListItem
        button
        component={Link} to="/dashboard/organizations"
-       selected={selectedIndex === 2}
-       onClick={event => handleListItemClick(event, 2)}>
+       selected={selectedIndex === 3}
+       onClick={event => handleListItemClick(event, 3)}>
         <ListItemIcon>
           <PeopleIcon />
         </ListItemIcon>
@@ -48,8 +48,8 @@ export default function ListDrawerItems() {
       <ListItem 
        button
        component={Link} to="/dashboard/Reports"
-       selected={selectedIndex === 3}
-       onClick={event => handleListItemClick(event, 3)}>
+       selected={selectedIndex === 4}
+       onClick={event => handleListItemClick(event, 4)}>
         <ListItemIcon>
           <BarChartIcon />
         </ListItemIcon>

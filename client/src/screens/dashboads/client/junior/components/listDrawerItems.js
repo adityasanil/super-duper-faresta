@@ -20,8 +20,8 @@ export default function ListDrawerItems() {
      <ListItem
       button
       component={Link} to="/dashboard/"
-      selected={selectedIndex === 0}
-      onClick={event => handleListItemClick(event, 0)}
+      selected={selectedIndex === 1}
+      onClick={event => handleListItemClick(event, 1)}
      >
       <ListItemIcon>
          <HomeIcon />
@@ -31,8 +31,8 @@ export default function ListDrawerItems() {
      <ListItem
       button
       component={Link} to="/dashboard/viewData"
-      selected={selectedIndex === 1}
-      onClick={event => handleListItemClick(event, 1)}>
+      selected={selectedIndex === 2}
+      onClick={event => handleListItemClick(event, 2)}>
        <ListItemIcon>
          <PageviewIcon />
        </ListItemIcon>
@@ -41,8 +41,8 @@ export default function ListDrawerItems() {
      <ListItem
       button
       component={Link} to="/dashboard/qrList"
-      selected={selectedIndex === 2}
-      onClick={event => handleListItemClick(event, 2)}>
+      selected={selectedIndex === 3}
+      onClick={event => handleListItemClick(event, 3)}>
        <ListItemIcon>
          <CropFreeIcon />
        </ListItemIcon>
@@ -51,8 +51,8 @@ export default function ListDrawerItems() {
      <ListItem 
       button
       component={Link} to="/dashboard/guide"
-      selected={selectedIndex === 3}
-      onClick={event => handleListItemClick(event, 3)}>
+      selected={selectedIndex === 4}
+      onClick={event => handleListItemClick(event, 4)}>
        <ListItemIcon>
          <HelpIcon />
        </ListItemIcon>
