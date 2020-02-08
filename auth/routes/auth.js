@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 // External Packages
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 // Local imports
 const { Tenant } = require("../models/tenant");

@@ -7,12 +7,12 @@ const config = require("config");
 const { Asset } = require("../models/assets");
 
 AWS.config.update({
-  accessKeyId: config.get("accessKeyIdAws"),
-  secretAccessKey: config.get("secretKeyAws")
+  accessKeyId: process.env.FAR_AWS_ACCESSKEY_ID,
+  secretAccessKey: process.env.FAR_AWS_SECRETKEY
 });
 
 const uploadParams = {
-  Bucket: "fixed-asset-flookup",
+  Bucket: config.get("far_awsBucket"),
   Key: null,
   Body: null,
   ACL: "public-read"

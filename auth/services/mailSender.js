@@ -6,7 +6,7 @@ let transporter = nodemailer.createTransport({
   secure: false, // true for 465, false for other ports
   auth: {
     user: config.get("far_emailAccount"),
-    pass: config.get("mailPassword")
+    pass: process.env.FAR_MAIL_PASSWORD
   },
   tls: {
     rejectUnauthorized: false

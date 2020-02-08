@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
-const config = require("config");
 
 const tenantSchema = new mongoose.Schema({
   companyName: {
@@ -81,7 +80,7 @@ tenantSchema.methods.generateAuthToken = function() {
       companyName: this.companyName,
       orgDatabase: this.orgDatabase
     },
-    config.get("jwtPrivateKey")
+    process.env.FAR_JWT_PRIVATEKEY
   );
   return token;
 };
