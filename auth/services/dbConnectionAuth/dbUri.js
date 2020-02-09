@@ -1,7 +1,7 @@
 const config = require("config");
 
 const dbUsername = config.get("dbUsername");
-const dbPassword = config.get("dbPassword");
+const dbPassword = process.env.FAR_DB_PASSWORD;
 const dbName = config.get("dbName");
 
 function dbUriFuncAuth() {

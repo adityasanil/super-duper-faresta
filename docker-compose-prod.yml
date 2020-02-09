@@ -1,0 +1,27 @@
+version: "3"
+services:
+  nginx:
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports:
+      - "3050:80"
+  auth:
+    build:
+      dockerfile: Dockerfile
+      context: ./auth
+    volumes:
+      - /usr/app/node_modules
+      - ./auth:/usr/app
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: ./api
+    volumes:
+      - /usr/app/node_modules
+      - ./api:/usr/app
+  client:
+    build:
+      dockerfile: Dockerfile
+      context: ./client

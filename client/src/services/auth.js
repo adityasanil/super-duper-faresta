@@ -1,8 +1,8 @@
 import http from "./httpServices";
-import { authApiUrl } from "../config.json";
+import config from "../config";
 import jwtDecode from "jwt-decode";
 
-const authApiEndpoint = authApiUrl + "/auth";
+const authApiEndpoint = config.authApiUrl + "/login";
 const token = "token";
 const userDetails = "User";
 

@@ -1,9 +1,9 @@
 import http from "./httpServices";
-import { apiUrl } from "../config.json";
+import config from "../config";
 
-const apiUrlToGetAllAssets = apiUrl + "/getAssets";
-const apiUrlToGetDistinctAssets = apiUrl + "/getAssets/distinctAssets";
-const apiUrlToGetAssetsCategory = apiUrl + "/getAssets/assetlist/";
+const apiUrlToGetAllAssets = config.apiUrl + "/getAssets";
+const apiUrlToGetDistinctAssets = config.apiUrl + "/getAssets/distinctAssets";
+const apiUrlToGetAssetsCategory = config.apiUrl + "/getAssets/assetlist/";
 
 export function getAllAssets() {
   const result = http.get(apiUrlToGetAllAssets);

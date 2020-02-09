@@ -3,7 +3,7 @@ const router = express.Router();
 
 // External packages
 const _ = require("lodash");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const generateRandomPassword = require("randomstring");
 
 // Models

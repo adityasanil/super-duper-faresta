@@ -1,7 +1,7 @@
 import http from "./httpServices";
-import { apiUrl } from "../config.json";
+import config from "../config";
 
-const sendImageApiUrl = apiUrl + "/imageUpload";
+const sendImageApiUrl = config.apiUrl + "/imageUpload";
 
 export function sendImage(data) {
   const result = http.post(sendImageApiUrl, data);

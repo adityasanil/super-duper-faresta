@@ -1,10 +1,6 @@
 {
   "dbName": "far-db",
   "dbUsername": "tech-flookup",
-  "dbPassword": "",
   "far_emailAccount": "tech@flookup.com",
-  "jwtPrivateKey": "",
-  "mailPassword": "",
-  "accessKeyIdAws": "",
-  "secretKeyAws": ""
+  "far_awsBucket": "fixed-asset-flookup"
 }

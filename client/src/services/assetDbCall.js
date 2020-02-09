@@ -1,7 +1,7 @@
 import http from "./httpServices";
-import { apiUrl } from "../config.json";
+import config from "../config";
 
-const connectApiEndpoint = apiUrl + "/connect";
+const connectApiEndpoint = config.apiUrl + "/connect";
 
 export async function connect(db) {
   try {
