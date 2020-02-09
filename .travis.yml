@@ -2,6 +2,10 @@ sudo: required
 services:
   - docker
 
+branches:
+  only:
+    - master
+
 before_install:
   - docker build -t techflookup/far-react-test -f ./client/Dockerfile.dev ./client
 
