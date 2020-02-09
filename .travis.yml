@@ -23,3 +23,16 @@ after_success:
   - docker push techflookup/far-nginx
   - docker push techflookup/far-auth
   - docker push techflookup/far-api
+
+deploy:
+  provider: elasticbeanstalk
+  region: ap-south-1
+  app: fixed-assets-ebs
+  env: FixedAssetsEbs-env
+  bucket_name: elasticbeanstalk-ap-south-1-837962867465
+  bucket_path: fixed-assets-ebs
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
