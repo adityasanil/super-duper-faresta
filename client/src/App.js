@@ -34,7 +34,6 @@ class App extends Component {
 
   UNSAFE_componentWillMount() {
     try {
-      console.log("1: cwm");
       const user = getCurrentUser();
       if (user !== null) this.setState({ user, role: user.role });
     } catch (error) {

@@ -3,7 +3,6 @@ import config from "../config";
 import jwtDecode from "jwt-decode";
 
 const authApiEndpoint = config.authApiUrl + "/login";
-console.log(authApiEndpoint);
 const token = "token";
 const userDetails = "User";
 
