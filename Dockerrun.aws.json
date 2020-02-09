@@ -2,6 +2,20 @@
   "AWSEBDockerrunVersion": 2,
   "containerDefinitions": [
     {
+      "name": "nginx",
+      "image": "techflookup/far-nginx",
+      "hostname": "nginx",
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": ["client", "auth", "api"],
+      "memory": 128
+    },
+    {
       "name": "client",
       "image": "techflookup/far-client",
       "hostname": "client",
@@ -20,20 +34,6 @@
       "image": "techflookup/far-api",
       "hostname": "api",
       "essential": false,
-      "memory": 128
-    },
-    {
-      "name": "nginx",
-      "image": "techflookup/far-nginx",
-      "hostname": "nginx",
-      "essential": true,
-      "portMappings": [
-        {
-          "hostPort": 80,
-          "containerPort": 80
-        }
-      ],
-      "links": ["client", "auth", "api"],
       "memory": 128
     }
   ]
