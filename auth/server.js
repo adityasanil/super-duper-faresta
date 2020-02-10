@@ -50,7 +50,7 @@ app.use("/getAllTenants", getAllTenants);
 app.use("/regsiterClient", regsiterClient);
 
 // Port
-const PORT = 5001 || process.env.FAR_API_PORT;
+const PORT = 5001;
 app.listen(PORT, () => console.log(`Auth app listening on port ${PORT}...`));
 
 module.exports = app;

@@ -15,8 +15,8 @@ script:
 after_success:
   - docker build -t techflookup/far-client ./client
   - docker build -t techflookup/far-nginx ./nginx
-  - docker build -t techflookup/far-auth  ./auth
-  - docker build -t techflookup/far-api ./api
+  - docker build --build-arg JWT=$FAR_JWT_PRIVATEKEY --build-arg MAIL=$FAR_MAIL_PASSWORD --build-arg DB=$FAR_DB_PASSWORD -t techflookup/far-auth ./auth
+  - docker build --build-arg JWT=$FAR_JWT_PRIVATEKEY --build-arg MAIL=$FAR_MAIL_PASSWORD --build-arg DB=$FAR_DB_PASSWORD --build-arg ACCESS=$AWS_ACCESS_KEY --build-arg SECRET=$AWS_SECRET_KEY -t techflookup/far-api ./api
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push techflookup/far-client
