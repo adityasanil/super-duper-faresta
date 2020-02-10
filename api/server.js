@@ -57,7 +57,7 @@ app.use("/imageUpload", fileUpload);
 app.use("/saveAssets", saveAssetsList);
 
 // Port
-const PORT = process.env.FAR_API_PORT || 5000;
+const PORT = 5000;
 app.listen(PORT, () => console.log(`Api app listening on port ${PORT}...`));
 
 module.exports = app;
