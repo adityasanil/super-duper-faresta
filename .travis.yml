@@ -13,16 +13,13 @@ script:
   - docker run techflookup/far-react-test npm test -- --coverage --watchAll=false
 
 after_success:
-  - docker build -t techflookup/far-client ./client
-  - docker build -t techflookup/far-nginx ./nginx
-  - docker build -t techflookup/far-auth  ./auth
-  - docker build -t techflookup/far-api ./api
+  - docker-compose up --build
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push techflookup/far-client
-  - docker push techflookup/far-nginx
-  - docker push techflookup/far-auth
-  - docker push techflookup/far-api
+  - docker push techflookup/super-duper-faresta_client
+  - docker push techflookup/super-duper-faresta_nginx
+  - docker push techflookup/super-duper-faresta_auth
+  - docker push techflookup/super-duper-faresta_api
 
 deploy:
   provider: elasticbeanstalk
