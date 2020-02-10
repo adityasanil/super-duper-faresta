@@ -9,20 +9,6 @@
       "memory": 128
     },
     {
-      "name": "nginx",
-      "image": "techflookup/far-nginx",
-      "hostname": "nginx",
-      "essential": true,
-      "portMappings": [
-        {
-          "hostPort": 80,
-          "containerPort": 80
-        }
-      ],
-      "links": ["client"],
-      "memory": 128
-    },
-    {
       "name": "auth",
       "image": "techflookup/far-auth",
       "hostname": "auth",
@@ -34,6 +20,20 @@
       "image": "techflookup/far-api",
       "hostname": "api",
       "essential": false,
+      "memory": 128
+    },
+    {
+      "name": "nginx",
+      "image": "techflookup/far-nginx",
+      "hostname": "nginx",
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": ["client", "auth", "api"],
       "memory": 128
     }
   ]

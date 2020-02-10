@@ -15,7 +15,7 @@ ENV FAR_AWS_ACCESSKEY_ID ${ACCESS}
 ENV FAR_AWS_SECRETKEY ${SECRET}
 
 COPY ./package*.json ./
-RUN npm i 
+RUN npm install 
 COPY ./ ./
 
 CMD ["npm", "run", "start"]
