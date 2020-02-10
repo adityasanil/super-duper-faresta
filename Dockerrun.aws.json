@@ -21,6 +21,20 @@
       ],
       "links": ["client"],
       "memory": 128
+    },
+    {
+      "name": "auth",
+      "image": "techflookup/far-auth",
+      "hostname": "auth",
+      "essential": false,
+      "memory": 128
+    },
+    {
+      "name": "api",
+      "image": "techflookup/far-api",
+      "hostname": "api",
+      "essential": false,
+      "memory": 128
     }
   ]
 }
