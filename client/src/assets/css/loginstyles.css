@@ -18,6 +18,7 @@
   background-color: #009933 !important;
   color: #fff !important;
   width: auto !important;
+  margin-top: 10px !important;
 }
 .login-card-align {
   margin-top: 64px;
@@ -47,9 +48,10 @@
   padding-left: 50px;
 }
 .login-brand-styles {
-  padding-left: 30px;
-  padding-top: 30px;
-  width: 50%;
+  /* padding-left: 30px; */
+  padding-top: 10px;
+  padding-bottom: 25px;
+  width: 60%;
 }
 .login-body-styles {
   padding-top: 40px;
@@ -67,4 +69,10 @@
 }
 .forgot-grid {
   padding-top: 25px !important;
+}
+
+@media screen and (max-width: 480px) {
+  .login-background {
+    display: none;
+  }
 }
