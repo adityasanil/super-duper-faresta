@@ -13,7 +13,7 @@ script:
   - docker run techflookup/far-react-test npm test -- --coverage --watchAll=false
 
 after_success:
-  - docker-compose up build
+  - docker-compose build
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push techflookup/super-duper-faresta_client
