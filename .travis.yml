@@ -27,10 +27,10 @@ after_success:
 deploy:
   provider: elasticbeanstalk
   region: ap-south-1
-  app: fixed-assets-beanstalk
-  env: FixedAssetsBeanstalk-env
+  app: far-ebs
+  env: FarEbs-env
   bucket_name: elasticbeanstalk-ap-south-1-837962867465
-  bucket_path: fixed-assets-beanstalk
+  bucket_path: far-ebs
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
