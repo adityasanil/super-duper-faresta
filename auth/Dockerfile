@@ -11,7 +11,7 @@ ENV FAR_MAIL_PASSWORD ${MAIL}
 ENV FAR_DB_PASSWORD ${DB}
 
 COPY ./package*.json ./
-RUN npm i 
+RUN npm install 
 COPY ./ ./
 
 CMD ["npm", "run", "start"]
