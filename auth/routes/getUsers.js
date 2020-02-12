@@ -5,7 +5,8 @@ const { Tenant } = require("../models/tenant");
 
 router.post("/", async (req, res) => {
   const tenants = await Tenant.find({
-    orgDatabase: req.body.db
+    orgDatabase: { $eq: req.body.db },
+    role: { $ne: "senior" }
   }).select(
     "-__v -password -dateCreated -userType -companyName -panNumber -orgEmail"
   );
