@@ -48,9 +48,14 @@ class Organizations extends Form {
   onSubmit = async () => {
     // Call to backend to create organisation database
 
-    const { data } = this.state;
-    const register = await registerSenior(data);
-    console.log(register);
+    try {
+      const { data } = this.state;
+      const register = await registerSenior(data);
+      toast.success("Organization created");
+      console.log(register);
+    } catch (error) {
+      toast.error("Organization creation failed!");
+    }
   };
 
   render() {

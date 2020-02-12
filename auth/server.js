@@ -11,6 +11,7 @@ app.use(express.json({ limit: "50mb" }));
 
 //Local imports
 const auth = require("./routes/auth");
+const getUsers = require("./routes/getUsers");
 const getAllTenants = require("./routes/getTenants");
 const registerTenant = require("./routes/registerTenants");
 const regsiterClient = require("./routes/registerClientUser");
@@ -45,6 +46,7 @@ mongoose
 
 // Routes
 app.use("/login", auth);
+app.use("/getUsers", getUsers);
 app.use("/register", registerTenant);
 app.use("/getAllTenants", getAllTenants);
 app.use("/regsiterClient", regsiterClient);

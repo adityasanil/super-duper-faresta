@@ -8,8 +8,8 @@ import {
 } from "@material-ui/core";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-import { getUsers } from "services/getUsers";
-import UserTable from './userTable';
+import { getAllTenants } from "services/getUsers";
+import TenantTable from './tenantTable';
 
 const styles = {
   boxBorder: {
@@ -25,24 +25,25 @@ const styles = {
 };
 
 class UsersList extends Component {
-  state = { userList: []};
+  state = { tenantList: []};
 
   async componentDidMount() {
-    const db = this.props.user.orgDatabase;
-    const {data: userList} = await getUsers(db);
-    //console.log(userList);
-    this.setState({userList});
+    // const tenants = await getAllTenants();
+    // console.log(tenants);
+    const {data: tenantList} = await getAllTenants();
+    console.log(tenantList);
+    this.setState({tenantList});
+
 
   }
 
   render() {
     const { classes } = this.props;
-    const { userList } = this.state;
-
+    const { tenantList } = this.state;
 
     return (
       <Fragment>
-        <ToastContainer auatoClose={1500} closeButton={false} />
+        <ToastContainer autoClose={1500} closeButton={false} />
         <Grid>
           <main className={classes.content}>
             <Container maxWidth="lg">
@@ -54,12 +55,12 @@ class UsersList extends Component {
                   </Typography>
                   <br />
                   <Typography component="p" variant="p">
-                    Total number of users: <b>{userList.length}</b>
+                    Total number of seniors/organizations: <b>{tenantList.length}</b>
                   </Typography>
                   <br/>
                 </div>
                 <React.Fragment>
-                  <UserTable userList={userList}/>
+                  <TenantTable tenantList={tenantList}/>
                 </React.Fragment>
                 <br />
               </Box>

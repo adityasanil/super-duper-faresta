@@ -2,8 +2,6 @@ import React, { Component, Fragment } from "react";
 import ProgressBar from "./progressBar";
 
 class ImageUpload extends Component {
-  state = {};
-
   render() {
     return (
       <Fragment>
