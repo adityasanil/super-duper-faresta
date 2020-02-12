@@ -26,14 +26,12 @@ class SeniorUserDS extends Component {
           <Route path="/dashboard/qrList" component={QRCodeList} />
           <Route
             path="/dashboard/viewData/:category/:id"
-            render={props => (
-              <AssetInformation user={this.props.user} {...props} />
-            )}
+            render={props => <AssetInformation user={user} {...props} />}
           />
           <Route path="/dashboard/viewData/:category" component={AssetList} />
           <Route
             path="/dashboard/viewData"
-            render={props => <ViewData user={this.props.user} {...props} />}
+            render={props => <ViewData user={user} {...props} />}
           />
           <Route path="/dashboard/uploadData" component={UploadData} />
           <Route path="/dashboard/auditReport" component={AuditReport} />
@@ -41,7 +39,10 @@ class SeniorUserDS extends Component {
             path="/dashboard/addUsers"
             render={props => <AddUsers user={user} {...props} />}
           />
-          <Route path="/dashboard/usersList" component={UsersList} />
+          <Route
+            path="/dashboard/usersList"
+            render={props => <UsersList user={user} {...props} />}
+          />
           <Route path="/dashboard/guide" component={Guide} />
           <Route exact path="/editprofile" component={EditProfile} />
           <Route exact path="/dashboard/" component={Home} />

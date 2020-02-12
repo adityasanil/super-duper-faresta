@@ -9,6 +9,7 @@ import {
 
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import { getUsers } from "services/getUsers";
 
 const styles = {
   boxBorder: {
@@ -19,15 +20,18 @@ const styles = {
   },
   content: {
     flexGrow: 1,
-    //height: "100vh",
     overflow: "auto"
   }
 };
 
 class UsersList extends Component {
-  state = { user: [] };
+  state = { user: "" };
 
-  componentDidMount() {}
+  async componentDidMount() {
+    const db = this.props.user.orgDatabase;
+    const users = await getUsers(db);
+    console.log(users);
+  }
 
   render() {
     const { classes } = this.props;
