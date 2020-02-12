@@ -28,11 +28,11 @@ class UserTable extends Component{
         <Table className={classes.table} aria-label="simple table">
             <TableHead>
             <TableRow>
-                <TableCell className={classes.tableHeader}>Name</TableCell>
-                <TableCell className={classes.tableHeader}>Email</TableCell>
-                <TableCell className={classes.tableHeader} align="right">Role</TableCell>
-                <TableCell className={classes.tableHeader} align="right">Designation</TableCell>
-                <TableCell className={classes.tableHeader} align="right">Contact</TableCell>
+                <TableCell align="center" className={classes.tableHeader}>Name</TableCell>
+                <TableCell align="center" className={classes.tableHeader}>Email</TableCell>
+                <TableCell align="center" className={classes.tableHeader}>Role</TableCell>
+                <TableCell align="center" className={classes.tableHeader}>Designation</TableCell>
+                <TableCell align="center" className={classes.tableHeader}>Contact</TableCell>
             </TableRow>
             </TableHead>
             <TableBody>
@@ -40,13 +40,13 @@ class UserTable extends Component{
                 return (
                     <React.Fragment>
                         <TableRow key={item._id}>
-                        <TableCell component="th" scope="row">
+                        <TableCell align="center" component="th" scope="row">
                             {item.name}
                         </TableCell>
-                        <TableCell>{item.email}</TableCell>
-                        <TableCell align="right">{item.role}</TableCell>
-                        <TableCell align="right">{item.designation}</TableCell>
-                        <TableCell align="right">{item.contact}</TableCell>
+                        <TableCell align="center">{item.email}</TableCell>
+                        <TableCell align="center">{item.role}</TableCell>
+                        <TableCell align="center">{item.designation}</TableCell>
+                        <TableCell align="center">{item.contact}</TableCell>
                         </TableRow>
                     </React.Fragment>
                 );

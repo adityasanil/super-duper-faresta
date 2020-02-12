@@ -28,7 +28,7 @@ class TenantTable extends Component{
         <Table className={classes.table} aria-label="simple table" size="medium">
             <TableHead>
             <TableRow>
-                <TableCell className={classes.tableHeader}>Name</TableCell>
+                <TableCell align="center" className={classes.tableHeader}>Name</TableCell>
                 <TableCell align="center" className={classes.tableHeader}>Email</TableCell>
                 <TableCell align="center" className={classes.tableHeader}>Contact</TableCell>
                 <TableCell align="center" className={classes.tableHeader}>Company Name</TableCell>
@@ -42,7 +42,7 @@ class TenantTable extends Component{
                 return (
                     <React.Fragment>
                         <TableRow key={item._id}>
-                        <TableCell component="th">
+                        <TableCell component="th" sope="row" align="center">
                             {item.name}
                         </TableCell>
                         <TableCell align="center"><a href={"mailto:" + item.email}>{item.email}</a></TableCell>
