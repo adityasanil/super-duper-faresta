@@ -43,7 +43,7 @@ class UserTable extends Component{
                         <TableCell align="center" component="th" scope="row">
                             {item.name}
                         </TableCell>
-                        <TableCell align="center">{item.email}</TableCell>
+                        <TableCell align="center"><a href={"mailto:" + item.email}>{item.email}</a></TableCell>
                         <TableCell align="center">{item.role}</TableCell>
                         <TableCell align="center">{item.designation}</TableCell>
                         <TableCell align="center">{item.contact}</TableCell>
