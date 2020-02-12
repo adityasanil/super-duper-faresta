@@ -6,10 +6,10 @@ import {
   withStyles,
   Grid
 } from "@material-ui/core";
-
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { getUsers } from "services/getUsers";
+import UserTable from './userTable';
 
 const styles = {
   boxBorder: {
@@ -25,19 +25,24 @@ const styles = {
 };
 
 class UsersList extends Component {
-  state = { user: "" };
+  state = { userList: []};
 
   async componentDidMount() {
     const db = this.props.user.orgDatabase;
-    const users = await getUsers(db);
-    console.log(users);
+    const {data: userList} = await getUsers(db);
+    //console.log(userList);
+    this.setState({userList});
+
   }
 
   render() {
     const { classes } = this.props;
+    const { userList } = this.state;
+
+
     return (
       <Fragment>
-        <ToastContainer autoClose={1500} closeButton={false} />
+        <ToastContainer auatoClose={1500} closeButton={false} />
         <Grid>
           <main className={classes.content}>
             <Container maxWidth="lg">
@@ -47,7 +52,15 @@ class UsersList extends Component {
                   <Typography component="h5" variant="h5">
                     Users list
                   </Typography>
+                  <br />
+                  <Typography component="p" variant="p">
+                    Total number of users: <b>{userList.length}</b>
+                  </Typography>
+                  <br/>
                 </div>
+                <React.Fragment>
+                  <UserTable userList={userList}/>
+                </React.Fragment>
                 <br />
               </Box>
               <br />

@@ -6,10 +6,10 @@ import {
   withStyles,
   Grid
 } from "@material-ui/core";
-
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { getAllTenants } from "services/getUsers";
+import TenantTable from './tenantTable';
 
 const styles = {
   boxBorder: {
@@ -25,15 +25,22 @@ const styles = {
 };
 
 class UsersList extends Component {
-  state = { user: "" };
+  state = { tenantList: []};
 
   async componentDidMount() {
-    const tenants = await getAllTenants();
-    console.log(tenants);
+    // const tenants = await getAllTenants();
+    // console.log(tenants);
+    const {data: tenantList} = await getAllTenants();
+    console.log(tenantList);
+    this.setState({tenantList});
+
+
   }
 
   render() {
     const { classes } = this.props;
+    const { tenantList } = this.state;
+
     return (
       <Fragment>
         <ToastContainer autoClose={1500} closeButton={false} />
@@ -46,7 +53,15 @@ class UsersList extends Component {
                   <Typography component="h5" variant="h5">
                     Users list
                   </Typography>
+                  <br />
+                  <Typography component="p" variant="p">
+                    Total number of seniors/organizations: <b>{tenantList.length}</b>
+                  </Typography>
+                  <br/>
                 </div>
+                <React.Fragment>
+                  <TenantTable tenantList={tenantList}/>
+                </React.Fragment>
                 <br />
               </Box>
               <br />
