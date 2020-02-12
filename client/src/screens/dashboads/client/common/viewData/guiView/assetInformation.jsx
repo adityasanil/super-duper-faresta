@@ -11,12 +11,12 @@ import { getAssetById } from "services/getAssets";
 import QRCodeGenerator from "components/qrCodeGenerator";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { apiUrl } from "config.json";
+import config from "config.js";
 import { sendEditedData } from "services/sendAssetData";
 import { deleteAsset } from "services/deleteAsset";
 import ModalImage from "react-modal-image";
 
-const imageUploadUrl = apiUrl + "/imageUpload";
+const imageUploadUrl = config.apiUrl + "/imageUpload";
 
 const styles = {
   boxBorder: {
@@ -189,37 +189,36 @@ class AssetInformation extends Form {
               </Grid>
               <br />
               <Grid container direction="row" justify="space-between">
-              <Grid item>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  startIcon={<SaveIcon />}
-                  onClick={this.handleSave}
-                  disabled={
-                    user.role === "junior" || user.role === "auditor"
-                      ? true
-                      : false
-                  }
-                >
-                  Save
-                </Button>
+                <Grid item>
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    startIcon={<SaveIcon />}
+                    onClick={this.handleSave}
+                    disabled={
+                      user.role === "junior" || user.role === "auditor"
+                        ? true
+                        : false
+                    }
+                  >
+                    Save
+                  </Button>
+                </Grid>
+                <Grid item>
+                  <Button
+                    onClick={this.deleteAssetById}
+                    variant="contained"
+                    color="primary"
+                  >
+                    Delete Asset
+                  </Button>
+                </Grid>
               </Grid>
-              <Grid item>
-                <Button
-                  onClick={this.deleteAssetById}
-                  variant="contained"
-                  color="primary"
-                >
-                  Delete Asset
-                </Button>
-              </Grid>
-            </Grid>
             </Grid>
           </Box>
         </Container>
         <br />
       </Fragment>
-      
     );
   }
 }
