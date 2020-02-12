@@ -13,6 +13,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { apiUrl } from "config.json";
 import { sendEditedData } from "services/sendAssetData";
+import { deleteAsset } from "services/deleteAsset";
 import ModalImage from "react-modal-image";
 
 const imageUploadUrl = apiUrl + "/imageUpload";
@@ -105,6 +106,18 @@ class AssetInformation extends Form {
     }
   };
 
+  goback = () => {};
+  deleteAssetById = async () => {
+    const data = await deleteAsset(this.state.id);
+    console.log(data);
+    if (data.status === 200) {
+      toast.success("Asset deleted");
+      setTimeout(() => {
+        this.props.history.goBack();
+      }, 2000);
+    }
+  };
+
   render() {
     const data = JSON.parse(getUser());
     const dbName = data.orgDatabase;
@@ -117,9 +130,7 @@ class AssetInformation extends Form {
       quantity,
       vat
     } = this.state.data;
-
     const image = this.state.data.imageUri;
-
     const { user } = this.props;
 
     return (
@@ -177,7 +188,8 @@ class AssetInformation extends Form {
                 />
               </Grid>
               <br />
-              <Grid className="save-button-align-style">
+              <Grid container direction="row" justify="space-between">
+              <Grid item>
                 <Button
                   variant="contained"
                   color="secondary"
@@ -192,11 +204,22 @@ class AssetInformation extends Form {
                   Save
                 </Button>
               </Grid>
+              <Grid item>
+                <Button
+                  onClick={this.deleteAssetById}
+                  variant="contained"
+                  color="primary"
+                >
+                  Delete Asset
+                </Button>
+              </Grid>
+            </Grid>
             </Grid>
           </Box>
         </Container>
         <br />
       </Fragment>
+      
     );
   }
 }
