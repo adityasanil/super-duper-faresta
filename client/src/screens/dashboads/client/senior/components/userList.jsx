@@ -9,7 +9,7 @@ import {
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { getUsers } from "services/getUsers";
-import UserTable from './userTable';
+import UserTable from "./userTable";
 
 const styles = {
   boxBorder: {
@@ -25,20 +25,17 @@ const styles = {
 };
 
 class UsersList extends Component {
-  state = { userList: []};
+  state = { userList: [] };
 
   async componentDidMount() {
     const db = this.props.user.orgDatabase;
-    const {data: userList} = await getUsers(db);
-    //console.log(userList);
-    this.setState({userList});
-
+    const { data: userList } = await getUsers(db);
+    this.setState({ userList });
   }
 
   render() {
     const { classes } = this.props;
     const { userList } = this.state;
-
 
     return (
       <Fragment>
@@ -56,10 +53,10 @@ class UsersList extends Component {
                   <Typography component="p" variant="p">
                     Total number of users: <b>{userList.length}</b>
                   </Typography>
-                  <br/>
+                  <br />
                 </div>
                 <React.Fragment>
-                  <UserTable userList={userList}/>
+                  <UserTable userList={userList} />
                 </React.Fragment>
                 <br />
               </Box>
