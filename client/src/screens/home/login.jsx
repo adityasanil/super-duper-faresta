@@ -58,8 +58,8 @@ class Login extends Form {
     return (
       <Fragment>
         <Grid container direction="row">
-          <Grid item xs={12} md={3} lg={3}>
-            <div style={{ padding: 15 }}>
+          <Grid item xs={12} md={3} lg={3} container>
+            <div style={{ padding: 25 }}>
               <img className="login-brand-styles" src={Logo} alt={"Logo"} />
               <Typography className="login-header" component="h1" variant="h5">
                 Log in to your account
