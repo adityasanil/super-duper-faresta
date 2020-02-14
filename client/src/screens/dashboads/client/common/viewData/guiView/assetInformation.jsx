@@ -4,6 +4,7 @@ import SaveIcon from "@material-ui/icons/Save";
 
 import AssetInfoFields from "./assetInfoFields";
 import Form from "components/form/form";
+import Dialog from "components/dialog";
 import http from "services/httpServices";
 import { getUser } from "services/getToken";
 import ImageUpload from "components/imageUpload";
@@ -106,15 +107,18 @@ class AssetInformation extends Form {
     }
   };
 
-  goback = () => {};
   deleteAssetById = async () => {
-    const data = await deleteAsset(this.state.id);
-    console.log(data);
-    if (data.status === 200) {
-      toast.success("Asset deleted");
-      setTimeout(() => {
-        this.props.history.goBack();
-      }, 2000);
+    console.log("Delete called");
+    try {
+      const data = await deleteAsset(this.state.id);
+      if (data.status === 200) {
+        toast.success("Asset deleted");
+        setTimeout(() => {
+          this.props.history.goBack();
+        }, 1700);
+      }
+    } catch (error) {
+      toast.error("Failed to delete asset");
     }
   };
 
@@ -205,13 +209,7 @@ class AssetInformation extends Form {
                   </Button>
                 </Grid>
                 <Grid item>
-                  <Button
-                    onClick={this.deleteAssetById}
-                    variant="contained"
-                    color="primary"
-                  >
-                    Delete Asset
-                  </Button>
+                  <Dialog onClick={this.deleteAssetById} />
                 </Grid>
               </Grid>
             </Grid>
