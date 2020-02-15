@@ -9,7 +9,7 @@ import {
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { getAllTenants } from "services/getUsers";
-import TenantTable from './tenantTable';
+import TenantTable from "./tenantTable";
 
 const styles = {
   boxBorder: {
@@ -25,16 +25,11 @@ const styles = {
 };
 
 class UsersList extends Component {
-  state = { tenantList: []};
+  state = { tenantList: [] };
 
   async componentDidMount() {
-    // const tenants = await getAllTenants();
-    // console.log(tenants);
-    const {data: tenantList} = await getAllTenants();
-    console.log(tenantList);
-    this.setState({tenantList});
-
-
+    const { data: tenantList } = await getAllTenants();
+    this.setState({ tenantList });
   }
 
   render() {
@@ -55,12 +50,13 @@ class UsersList extends Component {
                   </Typography>
                   <br />
                   <Typography component="p" variant="p">
-                    Total number of seniors/organizations: <b>{tenantList.length}</b>
+                    Total number of seniors/organizations:{" "}
+                    <b>{tenantList.length}</b>
                   </Typography>
-                  <br/>
+                  <br />
                 </div>
                 <React.Fragment>
-                  <TenantTable tenantList={tenantList}/>
+                  <TenantTable tenantList={tenantList} />
                 </React.Fragment>
                 <br />
               </Box>
