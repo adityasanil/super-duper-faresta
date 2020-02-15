@@ -3,6 +3,7 @@ import {
   List,
   ListItem,
   Grid,
+  Typography,
   ExpansionPanel,
   ExpansionPanelSummary,
   ExpansionPanelDetails
@@ -30,6 +31,9 @@ class AssetList extends Component {
     const { result, category } = this.state;
     return (
       <Fragment>
+        <Typography component="p" variant="p">
+          Total: <b>{result.length}</b>
+        </Typography>
         <List className="list-style">
           {result.map(item => {
             return (

@@ -9,7 +9,7 @@ import {
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { getUsers } from "services/getUsers";
-import UserTable from "./userTable";
+import UserTable from "components/table";
 
 const styles = {
   boxBorder: {
