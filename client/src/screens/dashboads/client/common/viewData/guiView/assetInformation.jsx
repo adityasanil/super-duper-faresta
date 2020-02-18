@@ -125,7 +125,7 @@ class AssetInformation extends Form {
     const data = JSON.parse(getUser());
     const dbName = data.orgDatabase;
     const {
-      particulars,
+      description,
       id,
       other,
       category,
@@ -154,7 +154,7 @@ class AssetInformation extends Form {
                   <div id="printme">
                     <QRCodeGenerator
                       id={id}
-                      particulars={particulars}
+                      description={description}
                       other={other}
                       location={location}
                       quantity={quantity}
