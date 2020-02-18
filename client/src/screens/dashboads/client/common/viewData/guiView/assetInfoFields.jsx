@@ -370,6 +370,132 @@ class AssetInfoFields extends Component {
               name="element"
               onChange={handleOnChange}
             />
+            <InputField
+              id="standard-read-only-input"
+              className="asset-text-field"              
+              value={assetData.useful_life_companies_act}
+              helperText="Useful Life Companies Act"
+              InputProps={
+                user.role === "senior"
+                  ? {
+                      readOnly: false
+                    }
+                  : {
+                      readOnly: true
+                    }
+              }
+              variant="outlined"
+              name="element"
+              onChange={handleOnChange}
+            />
+            <InputField
+              id="standard-read-only-input"
+              className="asset-text-field"              
+              value={assetData.useful_life_management}
+              helperText="Useful Life Management"
+              InputProps={
+                user.role === "senior"
+                  ? {
+                      readOnly: false
+                    }
+                  : {
+                      readOnly: true
+                    }
+              }
+              variant="outlined"
+              name="element"
+              onChange={handleOnChange}
+            />
+            <InputField
+              id="standard-read-only-input"
+              className="asset-text-field"              
+              value={assetData.wdv_opening}
+              helperText="WDV Opening"
+              InputProps={
+                user.role === "senior"
+                  ? {
+                      readOnly: false
+                    }
+                  : {
+                      readOnly: true
+                    }
+              }
+              variant="outlined"
+              name="element"
+              onChange={handleOnChange}
+            />
+            <InputField
+              id="standard-read-only-input"
+              className="asset-text-field"              
+              value={assetData.wdv_closing}
+              helperText="WDV Closing"
+              InputProps={
+                user.role === "senior"
+                  ? {
+                      readOnly: false
+                    }
+                  : {
+                      readOnly: true
+                    }
+              }
+              variant="outlined"
+              name="element"
+              onChange={handleOnChange}
+            />
+            <InputField
+              id="standard-read-only-input"
+              className="asset-text-field"              
+              value={assetData.classification}
+              helperText="Classification"
+              InputProps={
+                user.role === "senior"
+                  ? {
+                      readOnly: false
+                    }
+                  : {
+                      readOnly: true
+                    }
+              }
+              variant="outlined"
+              name="element"
+              onChange={handleOnChange}
+            />
+            <InputField
+              id="standard-read-only-input"
+              className="asset-text-field"              
+              value={assetData.purchase_value}
+              helperText="Purchase Value"
+              InputProps={
+                user.role === "senior"
+                  ? {
+                      readOnly: false
+                    }
+                  : {
+                      readOnly: true
+                    }
+              }
+              variant="outlined"
+              name="element"
+              onChange={handleOnChange}
+            />
+            <InputField
+              id="standard-read-only-input"
+              className="asset-text-field"              
+              value={assetData.taxes_}
+              helperText="Taxes"
+              InputProps={
+                user.role === "senior"
+                  ? {
+                      readOnly: false
+                    }
+                  : {
+                      readOnly: true
+                    }
+              }
+              variant="outlined"
+              name="element"
+              onChange={handleOnChange}
+            />
         </Grid>
 
         {/* Junior Remarks */}
