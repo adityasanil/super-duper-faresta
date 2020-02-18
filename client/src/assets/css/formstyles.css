@@ -100,9 +100,9 @@
   color: white;
   font-weight: bold;
 }
-.upload-btn-style > form > div {
+/* .upload-btn-style > form > div {
   padding-bottom: 20px;
-}
+} */
 .asset-header-style {
   font-size: 20px;
   font-weight: bolder;
@@ -234,4 +234,14 @@
 .remark-text-field{
   padding: 20px !important;
   padding-left: 0px !important;
+}
+.image-upload-style{
+  max-width: 200px !important;
+  max-height: 350px !important;
+}
+.upload-btn-style > form > label > input{
+  padding-bottom: 15px !important;
+}
+.asset-delete-style{
+  padding-right: 20px !important;
 }
