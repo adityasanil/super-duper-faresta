@@ -247,4 +247,6 @@
 }
 .fullscreen-scroll > div{
   overflow-y: scroll !important;
+  background: white !important;
+
 }
