@@ -44,7 +44,7 @@ class SeniorUserDS extends Component {
             render={props => <UsersList user={user} {...props} />}
           />
           <Route path="/dashboard/guide" component={Guide} />
-          <Route exact path="/editprofile" component={EditProfile} />
+          <Route exact path="/dashboard/editprofile" component={EditProfile} />
           <Route exact path="/dashboard/" component={Home} />
           <Route component={NotFound} />
         </Switch>

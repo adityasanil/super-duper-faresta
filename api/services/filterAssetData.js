@@ -5,7 +5,6 @@ function manipulateData(array) {
       data[i].category = "Other";
     }
     data[i].element = data[i].category.toLowerCase().replace(/\W/g, "_");
-    data[i].identifier = data[i].element + "-key";
   }
   return data;
 }
