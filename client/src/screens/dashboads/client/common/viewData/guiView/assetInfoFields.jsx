@@ -8,9 +8,9 @@ class AssetInfoFields extends Component {
     return (
       <Fragment>
         <Grid container direction="row">
-          <Grid xs={12} md={3} lg={3}>
             <InputField
               id="standard-read-only-input"
+              className="asset-text-field"
               value={assetData.date_of_installation}
               helperText="Date of Installation"
               InputProps={
@@ -28,6 +28,7 @@ class AssetInfoFields extends Component {
             />
             <InputField
               id="standard-read-only-input"
+              className="asset-text-field"
               value={assetData.vendor_name}
               helperText="Vendor Name"
               InputProps={
@@ -45,6 +46,7 @@ class AssetInfoFields extends Component {
             />
             <InputField
               id="standard-read-only-input"
+              className="asset-text-field"              
               value={assetData.depreciation}
               helperText="Depreciation"
               InputProps={
@@ -62,6 +64,7 @@ class AssetInfoFields extends Component {
             />
             <InputField
               id="standard-read-only-input"
+              className="asset-text-field"              
               value={assetData.month_of_installation}
               helperText="Month of Installation"
               InputProps={
@@ -76,9 +79,10 @@ class AssetInfoFields extends Component {
               variant="outlined"
               name="month_of_installation"
               onChange={handleOnChange}
-            />
+            />  
             <InputField
               id="standard-read-only-input"
+              className="asset-text-field"              
               value={assetData.invoice_number}
               helperText="Invoice Number"
               InputProps={
@@ -96,6 +100,7 @@ class AssetInfoFields extends Component {
             />
             <InputField
               id="standard-read-only-input"
+              className="asset-text-field"              
               value={assetData.location}
               helperText="Location"
               InputProps={
@@ -113,6 +118,7 @@ class AssetInfoFields extends Component {
             />
             <InputField
               id="standard-read-only-input"
+              className="asset-text-field"              
               value={assetData.invoice_date}
               helperText="Invoice Date"
               InputProps={
@@ -130,6 +136,7 @@ class AssetInfoFields extends Component {
             />
             <InputField
               id="standard-read-only-input"
+              className="asset-text-field"              
               value={assetData.service_tax}
               helperText="Service Tax"
               InputProps={
@@ -147,6 +154,7 @@ class AssetInfoFields extends Component {
             />
             <InputField
               id="standard-read-only-input"
+              className="asset-text-field"              
               value={assetData.vat}
               helperText="VAT"
               InputProps={
@@ -164,6 +172,7 @@ class AssetInfoFields extends Component {
             />
             <InputField
               id="standard-read-only-input"
+              className="asset-text-field"              
               value={assetData.amount_capitalised}
               helperText="Amount Capitalized"
               InputProps={
@@ -182,6 +191,7 @@ class AssetInfoFields extends Component {
 
             <InputField
               id="standard-read-only-input"
+              className="asset-text-field"              
               value={assetData.category}
               helperText="Category"
               InputProps={
@@ -199,6 +209,7 @@ class AssetInfoFields extends Component {
             />
             <InputField
               id="standard-read-only-input"
+              className="asset-text-field"              
               value={assetData.other_charges}
               helperText="Other Charges"
               InputProps={
@@ -216,6 +227,7 @@ class AssetInfoFields extends Component {
             />
             <InputField
               id="standard-read-only-input"
+              className="asset-text-field"              
               value={assetData.quantity}
               helperText="Quantity"
               InputProps={
@@ -233,6 +245,7 @@ class AssetInfoFields extends Component {
             />
             <InputField
               id="standard-read-only-input"
+              className="asset-text-field"              
               value={assetData.total_invoice_amount}
               helperText="Total Invoice Amount"
               InputProps={
@@ -250,6 +263,7 @@ class AssetInfoFields extends Component {
             />
             <InputField
               id="standard-read-only-input"
+              className="asset-text-field"              
               value={assetData.dep_per_day}
               helperText="Depreciation Per Day"
               InputProps={
@@ -268,6 +282,7 @@ class AssetInfoFields extends Component {
 
             <InputField
               id="standard-read-only-input"
+              className="asset-text-field"              
               value={assetData.base_amount}
               helperText="Base Amount"
               InputProps={
@@ -285,6 +300,7 @@ class AssetInfoFields extends Component {
             />
             <InputField
               id="standard-read-only-input"
+              className="asset-text-field"              
               value={assetData.gross_block}
               helperText="Pending Useful Life"
               InputProps={
@@ -302,6 +318,7 @@ class AssetInfoFields extends Component {
             />
             <InputField
               id="standard-read-only-input"
+              className="asset-text-field"              
               value={assetData.number_of_days}
               helperText="Number of Days"
               InputProps={
@@ -319,6 +336,7 @@ class AssetInfoFields extends Component {
             />
             <InputField
               id="standard-read-only-input"
+              className="asset-text-field"              
               value={assetData.description}
               helperText="Particulars"
               InputProps={
@@ -336,6 +354,7 @@ class AssetInfoFields extends Component {
             />
             <InputField
               id="standard-read-only-input"
+              className="asset-text-field"              
               value={assetData.element}
               helperText="Element"
               InputProps={
@@ -351,16 +370,16 @@ class AssetInfoFields extends Component {
               name="element"
               onChange={handleOnChange}
             />
-          </Grid>
         </Grid>
 
         {/* Junior Remarks */}
 
         {(user.role === "junior" || user.role === "senior") && (
           <Fragment>
+            <Grid container>
             <Grid item xs={12} md={4} lg={4}>
               <InputField
-                className="remark-field-background"
+                className="remark-field-background remark-text-field"
                 id="standard-read-only-input"
                 placeholder="Add Remarks if any"
                 variant="outlined"
@@ -376,10 +395,10 @@ class AssetInfoFields extends Component {
                       }
                 }
               />
-            </Grid>
-            <Grid item xs={12} md={4} lg={4}>
+              </Grid>
+              <Grid item xs={12} md={4} lg={4}>
               <InputField
-                className="remark-field-background"
+                className="remark-field-background remark-text-field"
                 id="standard-read-only-input"
                 placeholder="Add Remarks if any"
                 variant="outlined"
@@ -395,10 +414,10 @@ class AssetInfoFields extends Component {
                       }
                 }
               />
-            </Grid>
-            <Grid item xs={12} md={4} lg={4}>
+              </Grid>
+              <Grid item xs={12} md={4} lg={4}>
               <InputField
-                className="remark-field-background"
+                className="remark-field-background remark-text-field"
                 id="standard-read-only-input"
                 placeholder="Add Remarks if any"
                 variant="outlined"
@@ -414,15 +433,17 @@ class AssetInfoFields extends Component {
                       }
                 }
               />
+              </Grid>
             </Grid>
           </Fragment>
         )}
         {/* Auditor Remarks */}
         {(user.role === "auditor" || user.role === "senior") && (
           <Fragment>
+           <Grid container>
             <Grid item xs={12} md={4} lg={4}>
               <InputField
-                className="auditorRemark-field-background"
+                className="auditorRemark-field-background remark-text-field"
                 id="standard-read-only-input"
                 placeholder="Add Remarks if any"
                 variant="outlined"
@@ -438,10 +459,10 @@ class AssetInfoFields extends Component {
                       }
                 }
               />
-            </Grid>
-            <Grid item xs={12} md={4} lg={4}>
+              </Grid>
+              <Grid item xs={12} md={4} lg={4}>
               <InputField
-                className="auditorRemark-field-background"
+                className="auditorRemark-field-background remark-text-field"
                 id="standard-read-only-input"
                 placeholder="Add Remarks if any"
                 variant="outlined"
@@ -457,10 +478,10 @@ class AssetInfoFields extends Component {
                       }
                 }
               />
-            </Grid>
-            <Grid item xs={12} md={4} lg={4}>
+              </Grid>
+              <Grid item xs={12} md={4} lg={4}>
               <InputField
-                className="auditorRemark-field-background"
+                className="auditorRemark-field-background remark-text-field"
                 id="standard-read-only-input"
                 placeholder="Add Remarks if any"
                 variant="outlined"
@@ -476,6 +497,7 @@ class AssetInfoFields extends Component {
                       }
                 }
               />
+              </Grid>
             </Grid>
           </Fragment>
         )}
