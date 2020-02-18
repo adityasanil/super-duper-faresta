@@ -51,10 +51,10 @@ class Organizations extends Form {
     try {
       const { data } = this.state;
       const register = await registerSenior(data);
-      toast.success("Organization created");
-      console.log(register);
+      toast.success(register.data.res);
     } catch (error) {
-      toast.error("Organization creation failed!");
+      const { data } = error.response;
+      toast.error(data.res);
     }
   };
 
