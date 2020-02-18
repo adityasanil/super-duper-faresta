@@ -85,6 +85,7 @@ class AssetInformation extends Form {
 
   onClickHandler = () => {
     const data = new FormData();
+    if (!this.state.selectedFile) return;
     data.append("file", this.state.selectedFile);
     data.append("id", this.state.id);
     http.post(imageUploadUrl, data, {
@@ -169,6 +170,7 @@ class AssetInformation extends Form {
                       onChangeHandler={this.onChangeHandler}
                       onClickHandler={this.onClickHandler}
                       loaded={this.state.loaded}
+                      imageSet={this.state.selectedFile}
                     />
                   </div>
                 </Grid>
