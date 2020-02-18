@@ -5,8 +5,12 @@ const { Asset } = require("../models/assets");
 
 router.post("/", async (req, res) => {
   const assetId = req.body.id;
-  const data = await Asset.deleteOne({ _id: assetId });
-  res.send(data);
+  try {
+    await Asset.deleteOne({ _id: assetId });
+    res.send({ res: "Asset deleted" });
+  } catch (error) {
+    res.status(500).send({ res: "Asset deletion failed" });
+  }
 });
 
 module.exports = router;
