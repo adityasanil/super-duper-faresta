@@ -28,7 +28,7 @@ class TabularView extends Component {
               <FullscreenIcon />
             </IconButton>
           </Grid>
-          <Grid item>
+          <Grid item className="fullscreen-scroll">
             <Fullscreen
               enabled={isFull}
               onChange={isFull => this.setState({ isFull })}

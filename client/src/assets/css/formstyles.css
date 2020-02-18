@@ -245,3 +245,6 @@
 .asset-delete-style{
   padding-right: 20px !important;
 }
+.fullscreen-scroll > div{
+  overflow-y: scroll !important;
+}
