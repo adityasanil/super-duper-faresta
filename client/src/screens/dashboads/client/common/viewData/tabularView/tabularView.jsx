@@ -24,6 +24,11 @@ class TabularView extends Component {
       <Fragment>
         <Grid>
           <Grid item>
+            <IconButton onClick={this.exitFull}>
+              <FullscreenIcon />
+            </IconButton>
+          </Grid>
+          <Grid item>
             <Fullscreen
               enabled={isFull}
               onChange={isFull => this.setState({ isFull })}
@@ -41,11 +46,6 @@ class TabularView extends Component {
                 <JsonTable className="table-test" rows={data} />
               </div>
             </Fullscreen>
-          </Grid>
-          <Grid item>
-            <IconButton onClick={this.exitFull}>
-              <FullscreenIcon />
-            </IconButton>
           </Grid>
         </Grid>
       </Fragment>
