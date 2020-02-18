@@ -45,9 +45,11 @@ class UploadData extends Component {
   handleSaveData = async () => {
     try {
       const result = await saveAssetsData(this.state.data);
-      if (result.status == 200) toast.info("Assets list added");
+      console.log(result);
+      if (result.status == 200) toast.info(result.data.res);
     } catch (error) {
-      toast.error("Failed to add assets list");
+      const { data } = error.response;
+      toast.error(data.res);
     }
   };
 

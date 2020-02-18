@@ -41,7 +41,7 @@ class Code extends Component {
   }
 
   get QRCodesList() {
-    const { description } = this.props;
+    const { des } = this.props;
     const { assetData } = this.state;
     const data = JSON.parse(getUser());
     const dbName = data.orgDatabase;
@@ -53,12 +53,12 @@ class Code extends Component {
           {assetData.map((asset, i) => {
             return (
               <Fragment>
-                <div style={description ? null : { paddingLeft: "40px" }}>
+                <div style={des ? null : { paddingLeft: "40px" }}>
                   <Grid container direction="column">
                     <Grid container direction="row">
                       <QRCodeGenerator
                         id={asset._id}
-                        particulars={asset.particulars}
+                        description={asset.description}
                         other={asset.other}
                         location={asset.location}
                         quantity={asset.quantity}
@@ -68,16 +68,14 @@ class Code extends Component {
                       />
                       <Grid
                         style={
-                          description
-                            ? { paddingLeft: "15px" }
-                            : { display: "none" }
+                          des ? { paddingLeft: "15px" } : { display: "none" }
                         }
                       >
                         <div>
                           <b>ID:</b> {asset._id}
                         </div>
                         <div>
-                          <b>Particulars:</b> {asset.particulars}
+                          <b>Description:</b> {asset.description}
                         </div>
                         <div>
                           <b>Category:</b> {asset.category}
@@ -109,16 +107,16 @@ class Code extends Component {
 
 class QRCodeList extends Component {
   state = {
-    description: true
+    des: true
   };
 
   setDescription = () => {
-    this.setState({ description: !this.state.description });
+    this.setState({ des: !this.state.des });
   };
 
   render() {
     const { classes } = this.props;
-    const { description } = this.state;
+    const { des } = this.state;
 
     return (
       <Fragment>
@@ -133,7 +131,7 @@ class QRCodeList extends Component {
                   color="primary"
                   variant="contained"
                 >
-                  {description ? "Hide description" : "Unhide description"}
+                  {des ? "Hide description" : "Unhide description"}
                 </Button>
               }
               <Print
@@ -158,7 +156,7 @@ class QRCodeList extends Component {
               <Suspense fallback={<Loader />}>
                 <Code
                   ref={el => (this.componentRef = el)}
-                  description={this.state.description}
+                  des={this.state.des}
                 />
               </Suspense>
             </Box>

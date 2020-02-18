@@ -15,7 +15,7 @@ const sendMail = require("../services/mailSender");
 router.post("/", async (req, res) => {
   // To prevent tenants with similar email-id
   let tenant = await Tenant.findOne({ email: req.body.email });
-  if (tenant) return res.status(400).send("Tenant already registered");
+  if (tenant) return res.status(500).send({ res: "Tenant already registered" });
 
   const tenantData = {
     companyName: req.body.companyName,
@@ -45,28 +45,20 @@ router.post("/", async (req, res) => {
   const salt = await bcrypt.genSalt(10);
   tenant.password = await bcrypt.hash(tenant.password, salt);
 
-  // Save to database
-  await tenant.save();
+  try {
+    // Save to database
+    await tenant.save();
 
-  // Send mail to the registered tenant
-  await sendMail.sendCredentials(tenant.email, unHashedPassword);
+    // Send mail to the registered tenant
+    await sendMail.sendCredentials(tenant.email, unHashedPassword);
 
-  // // Get auth token from tenant model
+    res.send({ res: "User registered" });
+  } catch (error) {
+    return res.status(500).send({ res: "User registration failed" });
+  }
+
+  // Get auth token from tenant model
   // const token = tenant.generateAuthToken();
-
-  // // Display data of tenant that was saved and set headers
-  res.send(
-    _.pick(tenant, [
-      "_id",
-      "name",
-      "email",
-      "companyName",
-      "orgDatabase",
-      "role",
-      "userType",
-      "dateCreated"
-    ])
-  );
 });
 
 module.exports = router;

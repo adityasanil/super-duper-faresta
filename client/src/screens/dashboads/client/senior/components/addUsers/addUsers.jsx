@@ -17,7 +17,6 @@ const styles = {
   },
   content: {
     flexGrow: 1,
-    //height: "100vh",
     overflow: "auto"
   }
 };
@@ -50,10 +49,11 @@ class AddUsers extends Form {
       registeredBy: this.state.registeredBy
     };
     try {
-      const { status } = await createUser(data);
-      if (status == 200) toast.success("User created");
+      const result = await createUser(data);
+      if (result.status == 200) toast.success(result.data.res);
     } catch (error) {
-      toast.error("User creation failed");
+      const { data } = error.response;
+      toast.error(data.res);
     }
   };
 

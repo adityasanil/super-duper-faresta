@@ -11,9 +11,11 @@ function connect(dbName) {
   mongoose
     .connect(uri)
     .then(() =>
-      console.log(`Connected to tenant's organisation database: ${uri}..`)
+      console.log(
+        `Connected to tenant's organisation database (api): ${dbName}..`
+      )
     )
-    .catch(err => console.log("Could not connect to MongoDB: ", err));
+    .catch(err => console.log("Could not connect to MongoDB api: ", err));
 }
 
 module.exports = {

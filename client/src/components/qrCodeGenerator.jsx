@@ -18,7 +18,7 @@ class QRCodeGenerator extends Component {
   render() {
     const {
       id,
-      particulars,
+      description,
       location,
       quantity,
       vat,
@@ -33,8 +33,8 @@ class QRCodeGenerator extends Component {
             "ID: " +
               id +
               "\n" +
-              "Particulars: " +
-              particulars +
+              "Description: " +
+              description +
               "\n" +
               "Category: " +
               category +

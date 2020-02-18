@@ -226,3 +226,12 @@
 .iam-select-style{
   padding-top: 30px !important;
 }
+.asset-text-field{
+  padding-right: 20px !important;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+.remark-text-field{
+  padding: 20px !important;
+  padding-left: 0px !important;
+}

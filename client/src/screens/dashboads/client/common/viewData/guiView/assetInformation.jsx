@@ -85,6 +85,7 @@ class AssetInformation extends Form {
 
   onClickHandler = () => {
     const data = new FormData();
+    if (!this.state.selectedFile) return;
     data.append("file", this.state.selectedFile);
     data.append("id", this.state.id);
     http.post(imageUploadUrl, data, {
@@ -98,7 +99,6 @@ class AssetInformation extends Form {
 
   handleSave = async () => {
     const data = { ...this.state.data };
-
     try {
       const result = await sendEditedData(data);
       toast.info("Updated successfully");
@@ -108,17 +108,17 @@ class AssetInformation extends Form {
   };
 
   deleteAssetById = async () => {
-    console.log("Delete called");
     try {
       const data = await deleteAsset(this.state.id);
       if (data.status === 200) {
-        toast.success("Asset deleted");
+        toast.info(data.data.res);
         setTimeout(() => {
           this.props.history.goBack();
         }, 1700);
       }
     } catch (error) {
-      toast.error("Failed to delete asset");
+      const { data } = error.response;
+      toast.error(data.res);
     }
   };
 
@@ -126,7 +126,7 @@ class AssetInformation extends Form {
     const data = JSON.parse(getUser());
     const dbName = data.orgDatabase;
     const {
-      particulars,
+      description,
       id,
       other,
       category,
@@ -155,7 +155,7 @@ class AssetInformation extends Form {
                   <div id="printme">
                     <QRCodeGenerator
                       id={id}
-                      particulars={particulars}
+                      description={description}
                       other={other}
                       location={location}
                       quantity={quantity}
@@ -170,6 +170,7 @@ class AssetInformation extends Form {
                       onChangeHandler={this.onChangeHandler}
                       onClickHandler={this.onClickHandler}
                       loaded={this.state.loaded}
+                      imageSet={this.state.selectedFile}
                     />
                   </div>
                 </Grid>
@@ -191,7 +192,6 @@ class AssetInformation extends Form {
                   user={user}
                 />
               </Grid>
-              <br />
               <Grid container direction="row" justify="space-between">
                 <Grid item>
                   <Button

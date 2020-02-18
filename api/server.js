@@ -40,6 +40,7 @@ if (!process.env.FAR_AWS_ACCESSKEY_ID) {
   console.log("FATAL ERROR: Set FAR_AWS_ACCESSKEY_ID. ");
   process.exit(1);
 }
+
 if (!process.env.FAR_AWS_SECRETKEY) {
   console.log("FATAL ERROR: Set FAR_AWS_SECRETKEY. ");
   process.exit(1);
