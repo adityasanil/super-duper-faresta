@@ -98,7 +98,6 @@ class AssetInformation extends Form {
 
   handleSave = async () => {
     const data = { ...this.state.data };
-
     try {
       const result = await sendEditedData(data);
       toast.info("Updated successfully");
@@ -108,17 +107,17 @@ class AssetInformation extends Form {
   };
 
   deleteAssetById = async () => {
-    console.log("Delete called");
     try {
       const data = await deleteAsset(this.state.id);
       if (data.status === 200) {
-        toast.success("Asset deleted");
+        toast.info(data.data.res);
         setTimeout(() => {
           this.props.history.goBack();
         }, 1700);
       }
     } catch (error) {
-      toast.error("Failed to delete asset");
+      const { data } = error.response;
+      toast.error(data.res);
     }
   };
 

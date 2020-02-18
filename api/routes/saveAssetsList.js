@@ -13,9 +13,9 @@ router.post("/", async (req, res) => {
 
   try {
     const store = await Asset.insertMany(array);
-    res.send("Asset list added");
+    res.send({ res: "Asset list added" });
   } catch (error) {
-    res.send("Failed to add list");
+    res.status(500).send({ res: "Failed to upload data" });
   }
 });
 
