@@ -23,7 +23,7 @@ class AssetInfoFields extends Component {
                     }
               }
               variant="outlined"
-              name="date_of_installation"
+              name="asset_code"
               onChange={handleOnChange}
             />
             <InputField
@@ -42,6 +42,60 @@ class AssetInfoFields extends Component {
               }
               variant="outlined"
               name="description"
+              onChange={handleOnChange}
+            />
+            <InputField
+              id="standard-read-only-input"
+              className="asset-text-field"              
+              value={assetData.category}
+              helperText="Category"
+              InputProps={
+                user.role === "senior"
+                  ? {
+                      readOnly: false
+                    }
+                  : {
+                      readOnly: true
+                    }
+              }
+              variant="outlined"
+              name="category"
+              onChange={handleOnChange}
+            />
+            <InputField
+              id="standard-read-only-input"
+              className="asset-text-field"              
+              value={assetData.quantity}
+              helperText="Quantity"
+              InputProps={
+                user.role === "senior"
+                  ? {
+                      readOnly: false
+                    }
+                  : {
+                      readOnly: true
+                    }
+              }
+              variant="outlined"
+              name="quantity"
+              onChange={handleOnChange}
+            />
+             <InputField
+              id="standard-read-only-input"
+              className="asset-text-field"
+              value={assetData.vendor_name}
+              helperText="Vendor Name"
+              InputProps={
+                user.role === "senior"
+                  ? {
+                      readOnly: false
+                    }
+                  : {
+                      readOnly: true
+                    }
+              }
+              variant="outlined"
+              name="vendor_name"
               onChange={handleOnChange}
             />
             <InputField
@@ -82,42 +136,6 @@ class AssetInfoFields extends Component {
             />  
             <InputField
               id="standard-read-only-input"
-              className="asset-text-field"
-              value={assetData.vendor_name}
-              helperText="Vendor Name"
-              InputProps={
-                user.role === "senior"
-                  ? {
-                      readOnly: false
-                    }
-                  : {
-                      readOnly: true
-                    }
-              }
-              variant="outlined"
-              name="vendor_name"
-              onChange={handleOnChange}
-            />
-            <InputField
-              id="standard-read-only-input"
-              className="asset-text-field"              
-              value={assetData.depreciation}
-              helperText="Depreciation"
-              InputProps={
-                user.role === "senior"
-                  ? {
-                      readOnly: false
-                    }
-                  : {
-                      readOnly: true
-                    }
-              }
-              variant="outlined"
-              name="depreciation"
-              onChange={handleOnChange}
-            />
-            <InputField
-              id="standard-read-only-input"
               className="asset-text-field"              
               value={assetData.invoice_number}
               helperText="Invoice Number"
@@ -132,24 +150,6 @@ class AssetInfoFields extends Component {
               }
               variant="outlined"
               name="invoice_number"
-              onChange={handleOnChange}
-            />
-            <InputField
-              id="standard-read-only-input"
-              className="asset-text-field"              
-              value={assetData.location}
-              helperText="Location"
-              InputProps={
-                user.role === "senior"
-                  ? {
-                      readOnly: false
-                    }
-                  : {
-                      readOnly: true
-                    }
-              }
-              variant="outlined"
-              name="location"
               onChange={handleOnChange}
             />
             <InputField
@@ -170,6 +170,96 @@ class AssetInfoFields extends Component {
               name="invoice_date"
               onChange={handleOnChange}
             />
+            <InputField
+              id="standard-read-only-input"
+              className="asset-text-field"              
+              value={assetData.total_invoice_amount}
+              helperText="Total Invoice Amount"
+              InputProps={
+                user.role === "senior"
+                  ? {
+                      readOnly: false
+                    }
+                  : {
+                      readOnly: true
+                    }
+              }
+              variant="outlined"
+              name="total_invoice_amount"
+              onChange={handleOnChange}
+            />
+            <InputField
+              id="standard-read-only-input"
+              className="asset-text-field"              
+              value={assetData.base_amount}
+              helperText="Base Amount"
+              InputProps={
+                user.role === "senior"
+                  ? {
+                      readOnly: false
+                    }
+                  : {
+                      readOnly: true
+                    }
+              }
+              variant="outlined"
+              name="base_amount"
+              onChange={handleOnChange}
+            />
+            <InputField
+              id="standard-read-only-input"
+              className="asset-text-field"              
+              value={assetData.amount_capitalised}
+              helperText="Amount Capitalized"
+              InputProps={
+                user.role === "senior"
+                  ? {
+                      readOnly: false
+                    }
+                  : {
+                      readOnly: true
+                    }
+              }
+              variant="outlined"
+              name="amount_capitalised"
+              onChange={handleOnChange}
+            />
+            <InputField
+              id="standard-read-only-input"
+              className="asset-text-field"              
+              value={assetData.capitalised_value}
+              helperText="Capitalized Value"
+              InputProps={
+                user.role === "senior"
+                  ? {
+                      readOnly: false
+                    }
+                  : {
+                      readOnly: true
+                    }
+              }
+              variant="outlined"
+              name="capitalised_value"
+              onChange={handleOnChange}
+            />
+            <InputField
+              id="standard-read-only-input"
+              className="asset-text-field"              
+              value={assetData.location}
+              helperText="Location"
+              InputProps={
+                user.role === "senior"
+                  ? {
+                      readOnly: false
+                    }
+                  : {
+                      readOnly: true
+                    }
+              }
+              variant="outlined"
+              name="location"
+              onChange={handleOnChange}
+            />           
             <InputField
               id="standard-read-only-input"
               className="asset-text-field"              
@@ -209,8 +299,8 @@ class AssetInfoFields extends Component {
             <InputField
               id="standard-read-only-input"
               className="asset-text-field"              
-              value={assetData.amount_capitalised}
-              helperText="Amount Capitalized"
+              value={assetData.taxes_}
+              helperText="Taxes"
               InputProps={
                 user.role === "senior"
                   ? {
@@ -221,26 +311,7 @@ class AssetInfoFields extends Component {
                     }
               }
               variant="outlined"
-              name="amount_capitalised"
-              onChange={handleOnChange}
-            />
-
-            <InputField
-              id="standard-read-only-input"
-              className="asset-text-field"              
-              value={assetData.category}
-              helperText="Category"
-              InputProps={
-                user.role === "senior"
-                  ? {
-                      readOnly: false
-                    }
-                  : {
-                      readOnly: true
-                    }
-              }
-              variant="outlined"
-              name="category"
+              name="taxes_"
               onChange={handleOnChange}
             />
             <InputField
@@ -260,12 +331,12 @@ class AssetInfoFields extends Component {
               variant="outlined"
               name="other_charges"
               onChange={handleOnChange}
-            />
+            />     
             <InputField
               id="standard-read-only-input"
               className="asset-text-field"              
-              value={assetData.quantity}
-              helperText="Quantity"
+              value={assetData.depreciation}
+              helperText="Depreciation"
               InputProps={
                 user.role === "senior"
                   ? {
@@ -276,14 +347,14 @@ class AssetInfoFields extends Component {
                     }
               }
               variant="outlined"
-              name="quantity"
+              name="depreciation"
               onChange={handleOnChange}
             />
             <InputField
               id="standard-read-only-input"
               className="asset-text-field"              
-              value={assetData.total_invoice_amount}
-              helperText="Total Invoice Amount"
+              value={assetData.dep_rate}
+              helperText="Depreciation Rate"
               InputProps={
                 user.role === "senior"
                   ? {
@@ -294,7 +365,7 @@ class AssetInfoFields extends Component {
                     }
               }
               variant="outlined"
-              name="total_invoice_amount"
+              name="dep_rate"
               onChange={handleOnChange}
             />
             <InputField
@@ -312,26 +383,7 @@ class AssetInfoFields extends Component {
                     }
               }
               variant="outlined"
-              name="depreciation_per_day"
-              onChange={handleOnChange}
-            />
-
-            <InputField
-              id="standard-read-only-input"
-              className="asset-text-field"              
-              value={assetData.base_amount}
-              helperText="Base Amount"
-              InputProps={
-                user.role === "senior"
-                  ? {
-                      readOnly: false
-                    }
-                  : {
-                      readOnly: true
-                    }
-              }
-              variant="outlined"
-              name="base_amount"
+              name="dep_per_day"
               onChange={handleOnChange}
             />
             <InputField
@@ -349,7 +401,25 @@ class AssetInfoFields extends Component {
                     }
               }
               variant="outlined"
-              name="pending_useful_life"
+              name="gross_block"
+              onChange={handleOnChange}
+            />
+            <InputField
+              id="standard-read-only-input"
+              className="asset-text-field"              
+              value={assetData.net_block}
+              helperText="Net Block"
+              InputProps={
+                user.role === "senior"
+                  ? {
+                      readOnly: false
+                    }
+                  : {
+                      readOnly: true
+                    }
+              }
+              variant="outlined"
+              name="net_block"
               onChange={handleOnChange}
             />
             <InputField
@@ -403,7 +473,7 @@ class AssetInfoFields extends Component {
                     }
               }
               variant="outlined"
-              name="element"
+              name="useful_life_companies_act"
               onChange={handleOnChange}
             />
             <InputField
@@ -421,7 +491,7 @@ class AssetInfoFields extends Component {
                     }
               }
               variant="outlined"
-              name="element"
+              name="useful_life_management"
               onChange={handleOnChange}
             />
             <InputField
@@ -439,7 +509,7 @@ class AssetInfoFields extends Component {
                     }
               }
               variant="outlined"
-              name="element"
+              name="wdv_opening"
               onChange={handleOnChange}
             />
             <InputField
@@ -457,7 +527,7 @@ class AssetInfoFields extends Component {
                     }
               }
               variant="outlined"
-              name="element"
+              name="wdv_closing"
               onChange={handleOnChange}
             />
             <InputField
@@ -475,7 +545,7 @@ class AssetInfoFields extends Component {
                     }
               }
               variant="outlined"
-              name="element"
+              name="classification"
               onChange={handleOnChange}
             />
             <InputField
@@ -493,45 +563,10 @@ class AssetInfoFields extends Component {
                     }
               }
               variant="outlined"
-              name="element"
+              name="purchase_value"
               onChange={handleOnChange}
             />
-            <InputField
-              id="standard-read-only-input"
-              className="asset-text-field"              
-              value={assetData.taxes_}
-              helperText="Taxes"
-              InputProps={
-                user.role === "senior"
-                  ? {
-                      readOnly: false
-                    }
-                  : {
-                      readOnly: true
-                    }
-              }
-              variant="outlined"
-              name="element"
-              onChange={handleOnChange}
-            />
-            <InputField
-              id="standard-read-only-input"
-              className="asset-text-field"              
-              value={assetData.capitalised_value}
-              helperText="Capitalized Value"
-              InputProps={
-                user.role === "senior"
-                  ? {
-                      readOnly: false
-                    }
-                  : {
-                      readOnly: true
-                    }
-              }
-              variant="outlined"
-              name="element"
-              onChange={handleOnChange}
-            />
+            
         </Grid>
 
         {/* Junior Remarks */}
