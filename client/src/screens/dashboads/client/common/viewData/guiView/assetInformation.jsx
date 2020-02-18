@@ -177,10 +177,13 @@ class AssetInformation extends Form {
                 <Grid item xs={12} md={4} lg={4}>
                   <span>
                     <div>
-                      <ModalImage small={image} large={image} />
+                      <ModalImage className="image-upload-style" 
+                      small={image}
+                      large={image}
+                      alt="Image Preview" />
                     </div>
                     <div>
-                      <span>Image Preview</span>
+                      {/* <span>Image Preview</span> */}
                     </div>
                   </span>
                 </Grid>
@@ -208,7 +211,7 @@ class AssetInformation extends Form {
                     Save
                   </Button>
                 </Grid>
-                <Grid item>
+                <Grid item className="asset-delete-style">
                   <Dialog onClick={this.deleteAssetById} />
                 </Grid>
               </Grid>
