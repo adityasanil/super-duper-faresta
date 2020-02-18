@@ -43,7 +43,7 @@ class AssetList extends Component {
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
-                  {item.particulars}
+                  {item.description}
                 </ExpansionPanelSummary>
                 <ListItem key={item._id} className="asset-expansion-list-style">
                   <Link

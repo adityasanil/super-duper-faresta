@@ -191,7 +191,6 @@ class AssetInformation extends Form {
                   user={user}
                 />
               </Grid>
-              <br />
               <Grid container direction="row" justify="space-between">
                 <Grid item>
                   <Button

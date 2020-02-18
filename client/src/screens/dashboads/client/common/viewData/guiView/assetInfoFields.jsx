@@ -7,10 +7,9 @@ class AssetInfoFields extends Component {
     const { handleOnChange, assetData, user } = this.props;
     return (
       <Fragment>
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={3} lg={3}>
+        <Grid container direction="row">
+          <Grid xs={12} md={3} lg={3}>
             <InputField
-              className="asset-text-field-style"
               id="standard-read-only-input"
               value={assetData.date_of_installation}
               helperText="Date of Installation"
@@ -28,7 +27,6 @@ class AssetInfoFields extends Component {
               onChange={handleOnChange}
             />
             <InputField
-              className="asset-text-field-style"
               id="standard-read-only-input"
               value={assetData.vendor_name}
               helperText="Vendor Name"
@@ -46,7 +44,6 @@ class AssetInfoFields extends Component {
               onChange={handleOnChange}
             />
             <InputField
-              className="asset-text-field-style"
               id="standard-read-only-input"
               value={assetData.depreciation}
               helperText="Depreciation"
@@ -64,7 +61,6 @@ class AssetInfoFields extends Component {
               onChange={handleOnChange}
             />
             <InputField
-              className="asset-text-field-style text-field-even"
               id="standard-read-only-input"
               value={assetData.month_of_installation}
               helperText="Month of Installation"
@@ -82,7 +78,6 @@ class AssetInfoFields extends Component {
               onChange={handleOnChange}
             />
             <InputField
-              className="asset-text-field-style"
               id="standard-read-only-input"
               value={assetData.invoice_number}
               helperText="Invoice Number"
@@ -100,7 +95,6 @@ class AssetInfoFields extends Component {
               onChange={handleOnChange}
             />
             <InputField
-              className="asset-text-field-style text-field-even"
               id="standard-read-only-input"
               value={assetData.location}
               helperText="Location"
@@ -117,10 +111,7 @@ class AssetInfoFields extends Component {
               name="location"
               onChange={handleOnChange}
             />
-          </Grid>
-          <Grid item xs={12} md={3} lg={3}>
             <InputField
-              className="asset-text-field-style"
               id="standard-read-only-input"
               value={assetData.invoice_date}
               helperText="Invoice Date"
@@ -138,7 +129,6 @@ class AssetInfoFields extends Component {
               onChange={handleOnChange}
             />
             <InputField
-              className="asset-text-field-style text-field-even"
               id="standard-read-only-input"
               value={assetData.service_tax}
               helperText="Service Tax"
@@ -156,25 +146,6 @@ class AssetInfoFields extends Component {
               onChange={handleOnChange}
             />
             <InputField
-              className="asset-text-field-style text-field-even"
-              id="standard-read-only-input"
-              value={assetData.identifier}
-              helperText="Identifier"
-              InputProps={
-                user.role === "senior"
-                  ? {
-                      readOnly: false
-                    }
-                  : {
-                      readOnly: true
-                    }
-              }
-              variant="outlined"
-              name="identifier"
-              onChange={handleOnChange}
-            />
-            <InputField
-              className="asset-text-field-style"
               id="standard-read-only-input"
               value={assetData.vat}
               helperText="VAT"
@@ -192,7 +163,6 @@ class AssetInfoFields extends Component {
               onChange={handleOnChange}
             />
             <InputField
-              className="asset-text-field-style"
               id="standard-read-only-input"
               value={assetData.amount_capitalised}
               helperText="Amount Capitalized"
@@ -209,10 +179,8 @@ class AssetInfoFields extends Component {
               name="amount_capitalised"
               onChange={handleOnChange}
             />
-          </Grid>
-          <Grid item xs={12} md={3} lg={3}>
+
             <InputField
-              className="asset-text-field-style"
               id="standard-read-only-input"
               value={assetData.category}
               helperText="Category"
@@ -230,7 +198,6 @@ class AssetInfoFields extends Component {
               onChange={handleOnChange}
             />
             <InputField
-              className="asset-text-field-style"
               id="standard-read-only-input"
               value={assetData.other_charges}
               helperText="Other Charges"
@@ -248,7 +215,6 @@ class AssetInfoFields extends Component {
               onChange={handleOnChange}
             />
             <InputField
-              className="asset-text-field-style"
               id="standard-read-only-input"
               value={assetData.quantity}
               helperText="Quantity"
@@ -266,7 +232,6 @@ class AssetInfoFields extends Component {
               onChange={handleOnChange}
             />
             <InputField
-              className="asset-text-field-style text-field-even"
               id="standard-read-only-input"
               value={assetData.total_invoice_amount}
               helperText="Total Invoice Amount"
@@ -284,9 +249,8 @@ class AssetInfoFields extends Component {
               onChange={handleOnChange}
             />
             <InputField
-              className="asset-text-field-style"
               id="standard-read-only-input"
-              value={assetData.depreciation_per_day}
+              value={assetData.dep_per_day}
               helperText="Depreciation Per Day"
               InputProps={
                 user.role === "senior"
@@ -301,10 +265,8 @@ class AssetInfoFields extends Component {
               name="depreciation_per_day"
               onChange={handleOnChange}
             />
-          </Grid>
-          <Grid item xs={12} md={3} lg={3}>
+
             <InputField
-              className="asset-text-field-style text-field-even"
               id="standard-read-only-input"
               value={assetData.base_amount}
               helperText="Base Amount"
@@ -322,9 +284,8 @@ class AssetInfoFields extends Component {
               onChange={handleOnChange}
             />
             <InputField
-              className="asset-text-field-style text-field-even"
               id="standard-read-only-input"
-              value={assetData.pending_useful_life}
+              value={assetData.gross_block}
               helperText="Pending Useful Life"
               InputProps={
                 user.role === "senior"
@@ -340,7 +301,6 @@ class AssetInfoFields extends Component {
               onChange={handleOnChange}
             />
             <InputField
-              className="asset-text-field-style text-field-even"
               id="standard-read-only-input"
               value={assetData.number_of_days}
               helperText="Number of Days"
@@ -358,9 +318,8 @@ class AssetInfoFields extends Component {
               onChange={handleOnChange}
             />
             <InputField
-              className="asset-text-field-style text-field-even"
               id="standard-read-only-input"
-              value={assetData.particulars}
+              value={assetData.description}
               helperText="Particulars"
               InputProps={
                 user.role === "senior"
@@ -376,7 +335,6 @@ class AssetInfoFields extends Component {
               onChange={handleOnChange}
             />
             <InputField
-              className="asset-text-field-style"
               id="standard-read-only-input"
               value={assetData.element}
               helperText="Element"
@@ -400,128 +358,124 @@ class AssetInfoFields extends Component {
 
         {(user.role === "junior" || user.role === "senior") && (
           <Fragment>
-            <Grid container spacing={3}>
-              <Grid item xs={12} md={4} lg={4}>
-                <InputField
-                  className="remark-field-background"
-                  id="standard-read-only-input"
-                  placeholder="Add Remarks if any"
-                  variant="outlined"
-                  onChange={handleOnChange}
-                  name="remarkJunior_1"
-                  InputProps={
-                    user.role === "senior"
-                      ? {
-                          readOnly: true
-                        }
-                      : {
-                          readOnly: false
-                        }
-                  }
-                />
-              </Grid>
-              <Grid item xs={12} md={4} lg={4}>
-                <InputField
-                  className="remark-field-background"
-                  id="standard-read-only-input"
-                  placeholder="Add Remarks if any"
-                  variant="outlined"
-                  onChange={handleOnChange}
-                  name="remarkJunior_2"
-                  InputProps={
-                    user.role === "senior"
-                      ? {
-                          readOnly: true
-                        }
-                      : {
-                          readOnly: false
-                        }
-                  }
-                />
-              </Grid>
-              <Grid item xs={12} md={4} lg={4}>
-                <InputField
-                  className="remark-field-background"
-                  id="standard-read-only-input"
-                  placeholder="Add Remarks if any"
-                  variant="outlined"
-                  onChange={handleOnChange}
-                  name="remarkJunior_3"
-                  InputProps={
-                    user.role === "senior"
-                      ? {
-                          readOnly: true
-                        }
-                      : {
-                          readOnly: false
-                        }
-                  }
-                />
-              </Grid>
+            <Grid item xs={12} md={4} lg={4}>
+              <InputField
+                className="remark-field-background"
+                id="standard-read-only-input"
+                placeholder="Add Remarks if any"
+                variant="outlined"
+                onChange={handleOnChange}
+                name="remarkJunior_1"
+                InputProps={
+                  user.role === "senior"
+                    ? {
+                        readOnly: true
+                      }
+                    : {
+                        readOnly: false
+                      }
+                }
+              />
+            </Grid>
+            <Grid item xs={12} md={4} lg={4}>
+              <InputField
+                className="remark-field-background"
+                id="standard-read-only-input"
+                placeholder="Add Remarks if any"
+                variant="outlined"
+                onChange={handleOnChange}
+                name="remarkJunior_2"
+                InputProps={
+                  user.role === "senior"
+                    ? {
+                        readOnly: true
+                      }
+                    : {
+                        readOnly: false
+                      }
+                }
+              />
+            </Grid>
+            <Grid item xs={12} md={4} lg={4}>
+              <InputField
+                className="remark-field-background"
+                id="standard-read-only-input"
+                placeholder="Add Remarks if any"
+                variant="outlined"
+                onChange={handleOnChange}
+                name="remarkJunior_3"
+                InputProps={
+                  user.role === "senior"
+                    ? {
+                        readOnly: true
+                      }
+                    : {
+                        readOnly: false
+                      }
+                }
+              />
             </Grid>
           </Fragment>
         )}
         {/* Auditor Remarks */}
         {(user.role === "auditor" || user.role === "senior") && (
           <Fragment>
-            <Grid container spacing={3}>
-              <Grid item xs={12} md={4} lg={4}>
-                <InputField
-                  className="auditorRemark-field-background"
-                  id="standard-read-only-input"
-                  placeholder="Add Remarks if any"
-                  variant="outlined"
-                  onChange={handleOnChange}
-                  name="remarkAuditor_1"
-                  InputProps={
-                    user.role === "senior"
-                      ? {
-                          readOnly: true
-                        }
-                      : {
-                          readOnly: false
-                        }
-                  }
-                />
-              </Grid>
-              <Grid item xs={12} md={4} lg={4}>
-                <InputField
-                  className="auditorRemark-field-background"
-                  id="standard-read-only-input"
-                  placeholder="Add Remarks if any"
-                  variant="outlined"
-                  onChange={handleOnChange}
-                  name="remarkAuditor_2"
-                  InputProps={
-                    user.role === "senior"
-                      ? {
-                          readOnly: true
-                        }
-                      : {
-                          readOnly: false
-                        }
-                  }
-                />
-              </Grid>
-              <Grid item xs={12} md={4} lg={4}>
-                <InputField
-                  className="auditorRemark-field-background"
-                  id="standard-read-only-input"
-                  placeholder="Add Remarks if any"
-                  variant="outlined"
-                  onChange={handleOnChange}
-                  name="remarkAuditor_3"
-                  InputProps={
-                    user.role === "senior"
-                      ? {
-                          readOnly: true
-                        }
-                      : {
-                          readOnly: false
-                        }
-                  }
-                />
-              </Grid>
+            <Grid item xs={12} md={4} lg={4}>
+              <InputField
+                className="auditorRemark-field-background"
+                id="standard-read-only-input"
+                placeholder="Add Remarks if any"
+                variant="outlined"
+                onChange={handleOnChange}
+                name="remarkAuditor_1"
+                InputProps={
+                  user.role === "senior"
+                    ? {
+                        readOnly: true
+                      }
+                    : {
+                        readOnly: false
+                      }
+                }
+              />
+            </Grid>
+            <Grid item xs={12} md={4} lg={4}>
+              <InputField
+                className="auditorRemark-field-background"
+                id="standard-read-only-input"
+                placeholder="Add Remarks if any"
+                variant="outlined"
+                onChange={handleOnChange}
+                name="remarkAuditor_2"
+                InputProps={
+                  user.role === "senior"
+                    ? {
+                        readOnly: true
+                      }
+                    : {
+                        readOnly: false
+                      }
+                }
+              />
+            </Grid>
+            <Grid item xs={12} md={4} lg={4}>
+              <InputField
+                className="auditorRemark-field-background"
+                id="standard-read-only-input"
+                placeholder="Add Remarks if any"
+                variant="outlined"
+                onChange={handleOnChange}
+                name="remarkAuditor_3"
+                InputProps={
+                  user.role === "senior"
+                    ? {
+                        readOnly: true
+                      }
+                    : {
+                        readOnly: false
+                      }
+                }
+              />
             </Grid>
           </Fragment>
         )}
