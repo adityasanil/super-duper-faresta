@@ -66,7 +66,7 @@ class Code extends Component {
                         category={asset.category}
                         keyValue={dbName}
                       />
-                      <Grid
+                      <Grid className="qr-info-list-style"
                         style={
                           des ? { paddingLeft: "15px" } : { display: "none" }
                         }
@@ -82,7 +82,7 @@ class Code extends Component {
                         </div>
                       </Grid>
                     </Grid>
-                    <Grid container direction="column">
+                    <Grid className="sr-no-style" container direction="column">
                       <div>SR: {i}</div>
                     </Grid>
                   </Grid>
@@ -127,6 +127,7 @@ class QRCodeList extends Component {
             <Box className={classes.boxBorder}>
               {
                 <Button
+                  className="description-button-style"
                   onClick={this.setDescription}
                   color="primary"
                   variant="contained"
@@ -134,11 +135,13 @@ class QRCodeList extends Component {
                   {des ? "Hide description" : "Unhide description"}
                 </Button>
               }
+              
               <Print
                 trigger={() => (
                   // eslint-disable-next-line jsx-a11y/anchor-is-valid
                   <a
                     href="#"
+                    className="qr-print-button-style"
                     style={{ textDecoration: "none", paddingLeft: "20px" }}
                   >
                     <Button
@@ -153,6 +156,7 @@ class QRCodeList extends Component {
                 )}
                 content={() => this.componentRef}
               />
+             
               <Suspense fallback={<Loader />}>
                 <Code
                   ref={el => (this.componentRef = el)}

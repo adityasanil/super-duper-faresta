@@ -152,7 +152,7 @@ class AssetInformation extends Form {
                   alignItems="center"
                   alignContent="center"
                 >
-                  <div id="printme">
+                  <div className="qr-print" id="printme">
                     <QRCodeGenerator
                       id={id}
                       description={description}

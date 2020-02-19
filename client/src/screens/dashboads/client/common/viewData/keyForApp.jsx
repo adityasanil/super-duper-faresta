@@ -46,7 +46,7 @@ class KeyForApp extends Form {
             alignItems="center"
           >
              <Grid item xs={12} md={7} lg={7}>
-              <Typography>Key: {keyToDecrypt}</Typography>
+              <Typography className="key-text-align">Key: {keyToDecrypt}</Typography>
             </Grid>
             <Grid item xs={12} md={5} lg={5}>
               <form onSubmit={this.handleSubmit} className="email-field-align">
