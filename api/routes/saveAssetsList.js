@@ -23,7 +23,7 @@ router.put("/edit/:id", async (req, res) => {
   const id = req.params.id;
   const newData = req.body;
   try {
-    const newAssetData = await Asset.findByIdAndUpdate(
+    const newAssetData = await Asset.findOneAndUpdate(
       { _id: id },
       {
         $set: newData
