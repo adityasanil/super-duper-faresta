@@ -2,20 +2,21 @@ import React, { Fragment } from "react";
 import { Button, Grid, Box, Container } from "@material-ui/core";
 import SaveIcon from "@material-ui/icons/Save";
 
-import AssetInfoFields from "./assetInfoFields";
-import Form from "components/form/form";
+import config from "config.js";
 import Dialog from "components/dialog";
+import Form from "components/form/form";
 import http from "services/httpServices";
 import { getUser } from "services/getToken";
+import AssetInfoFields from "./assetInfoFields";
 import ImageUpload from "components/imageUpload";
 import { getAssetById } from "services/getAssets";
-import QRCodeGenerator from "components/qrCodeGenerator";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import config from "config.js";
-import { sendEditedData } from "services/sendAssetData";
 import { deleteAsset } from "services/deleteAsset";
+import { sendEditedData } from "services/sendAssetData";
+import QRCodeGenerator from "components/qrCodeGenerator";
+
 import ModalImage from "react-modal-image";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 
 const imageUploadUrl = config.apiUrl + "/imageUpload";
 
@@ -133,41 +134,31 @@ class AssetInformation extends Form {
         <ToastContainer autoClose={1500} closeButton={false} />
         <Container maxWidth="lg">
           <Box>
-            <Grid container direction="column" justify="center">
-              <Grid container spacing={3}>
-                <Grid
-                  item
-                  xs={12}
-                  md={8}
-                  lg={8}
-                  alignItems="center"
-                  alignContent="center"
-                >
+            <Grid container direction="column">
+              <Grid container direction="row" justify="space-between">
+                <Grid item>
                   <div id="printme">
                     <QRCodeGenerator id={id} keyValue={dbName} />
                   </div>
                   <button onClick={() => this.printOrder()}>Print</button>
-                  <div className="upload-btn-style">
-                    <ImageUpload
-                      onChangeHandler={this.onChangeHandler}
-                      onClickHandler={this.onClickHandler}
-                      loaded={this.state.loaded}
-                      imageSet={this.state.selectedFile}
-                    />
-                  </div>
-                </Grid>
-                <Grid item xs={12} md={4} lg={4}>
-                  <span>
-                    <div>
-                      <ModalImage
-                        className="image-upload-style"
-                        small={image}
-                        large={image}
-                        alt="Image Preview"
+                  {user.role === "senior" && (
+                    <div className="upload-btn-style">
+                      <ImageUpload
+                        onChangeHandler={this.onChangeHandler}
+                        onClickHandler={this.onClickHandler}
+                        loaded={this.state.loaded}
+                        imageSet={this.state.selectedFile}
                       />
                     </div>
-                    <div>{/* <span>Image Preview</span> */}</div>
-                  </span>
+                  )}
+                </Grid>
+                <Grid item>
+                  <ModalImage
+                    className="image-upload-style"
+                    small={image}
+                    large={image}
+                    alt="Image Preview"
+                  />
                 </Grid>
               </Grid>
               <Grid>
@@ -186,16 +177,18 @@ class AssetInformation extends Form {
                     onClick={this.handleSave}
                     disabled={
                       user.role === "junior" || user.role === "auditor"
-                        ? true
-                        : false
+                        ? false
+                        : true
                     }
                   >
                     Save
                   </Button>
                 </Grid>
-                <Grid item className="asset-delete-style">
-                  <Dialog onClick={this.deleteAssetById} />
-                </Grid>
+                {user.role === "senior" && (
+                  <Grid item>
+                    <Dialog onClick={this.deleteAssetById} />
+                  </Grid>
+                )}
               </Grid>
             </Grid>
           </Box>

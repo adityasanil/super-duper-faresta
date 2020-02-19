@@ -15,5 +15,6 @@ export function sendEditedData(data, id) {
 }
 
 export default {
-  saveAssetsData
+  saveAssetsData,
+  sendEditedData
 };
