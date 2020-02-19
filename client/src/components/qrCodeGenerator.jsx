@@ -9,46 +9,18 @@ class QRCodeGenerator extends Component {
   };
 
   crypt = (data, key) => {
-    // console.log("Key: " + key);
-    // const keyToDecrypt = Crypto.AES.encrypt(key, "ff").toString();
     const value = "flookup@" + Crypto.AES.encrypt(data, key).toString();
     return value;
   };
 
   render() {
-    const {
-      id,
-      description,
-      location,
-      quantity,
-      vat,
-      category,
-      keyValue
-    } = this.props;
+    const { id, keyValue } = this.props;
 
+    console.log(id);
     return (
       <Fragment>
         <QRCode
-          value={this.crypt(
-            "ID: " +
-              id +
-              "\n" +
-              "Description: " +
-              description +
-              "\n" +
-              "Category: " +
-              category +
-              "\n" +
-              "Location: " +
-              location +
-              "\n" +
-              "Quantity: " +
-              quantity +
-              "\n" +
-              "VAT: " +
-              vat,
-            keyValue
-          )}
+          value={this.crypt(id, keyValue)}
           renderAs={"svg"}
           level={"L"}
           version={40}

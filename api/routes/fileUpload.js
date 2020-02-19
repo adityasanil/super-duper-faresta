@@ -35,7 +35,7 @@ router.post("/", upload.single("file"), async (req, res) => {
   } catch (e) {
     console.log("Error uploading data: ", e);
   }
-  const imageUri = `https://fixed-asset-flookup.s3.ap-south-1.amazonaws.com/${params.Key}`;
+  const imageUri = config.get("far_awsBucketLink") + params.Key;
 
   const asset = await Asset.updateOne(
     { _id: id },

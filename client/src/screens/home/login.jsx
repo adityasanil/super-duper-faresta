@@ -32,7 +32,6 @@ const useStyles = {
   }
 };
 
-
 class Login extends Form {
   state = {
     data: {
@@ -41,21 +40,19 @@ class Login extends Form {
     }
   };
 
-
   onSubmit = async () => {
+    const { data } = this.state;
     try {
-      const { data } = this.state;
       const result = await login(data.email, data.password);
       const { orgDatabase } = jwtDecode(result.data);
       const connectData = await connect(orgDatabase);
       if (result.status === 200 && connectData.status === 200) {
         window.location = "/dashboard/";
       }
-    } catch (error) {
+    } catch (ex) {
       return null;
     }
   };
-  
 
   render() {
     return (

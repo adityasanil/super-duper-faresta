@@ -19,4 +19,21 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.put("/edit/:id", async (req, res) => {
+  const id = req.params.id;
+  const newData = req.body;
+  try {
+    const newAssetData = await Asset.findByIdAndUpdate(
+      { _id: id },
+      {
+        $set: newData
+      },
+      { new: true }
+    );
+    res.send({ res: "Asset Updated" });
+  } catch (error) {
+    res.status(500).send({ err: "Asset update failed" });
+  }
+});
+
 module.exports = router;

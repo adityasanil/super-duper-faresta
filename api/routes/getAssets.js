@@ -9,6 +9,16 @@ router.get("/", async (req, res) => {
   res.send(data);
 });
 
+router.get("/app/:id", async (req, res) => {
+  const assetId = req.params.id;
+  try {
+    const data = await Asset.find({ _id: assetId }).select("-__v -date");
+    res.send(data);
+  } catch (error) {
+    res.status(500).send("Request failed");
+  }
+});
+
 router.get("/distinctAssets", async (req, res) => {
   const data = await Asset.find()
     .select("-__v")

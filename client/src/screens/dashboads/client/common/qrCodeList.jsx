@@ -56,17 +56,9 @@ class Code extends Component {
                 <div style={des ? null : { paddingLeft: "40px" }}>
                   <Grid container direction="column">
                     <Grid container direction="row">
-                      <QRCodeGenerator
-                        id={asset._id}
-                        description={asset.description}
-                        other={asset.other}
-                        location={asset.location}
-                        quantity={asset.quantity}
-                        vat={asset.vat}
-                        category={asset.category}
-                        keyValue={dbName}
-                      />
-                      <Grid className="qr-info-list-style"
+                      <QRCodeGenerator id={asset._id} keyValue={dbName} />
+                      <Grid
+                        className="qr-info-list-style"
                         style={
                           des ? { paddingLeft: "15px" } : { display: "none" }
                         }
@@ -135,7 +127,7 @@ class QRCodeList extends Component {
                   {des ? "Hide description" : "Unhide description"}
                 </Button>
               }
-              
+
               <Print
                 trigger={() => (
                   // eslint-disable-next-line jsx-a11y/anchor-is-valid
@@ -156,7 +148,7 @@ class QRCodeList extends Component {
                 )}
                 content={() => this.componentRef}
               />
-             
+
               <Suspense fallback={<Loader />}>
                 <Code
                   ref={el => (this.componentRef = el)}
