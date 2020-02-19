@@ -2,5 +2,6 @@
   "dbName": "far-db",
   "dbUsername": "tech-flookup",
   "far_emailAccount": "tech@flookup.com",
-  "far_awsBucket": "fixed-asset-flookup"
+  "far_awsBucket": "fixed-asset-flookup",
+  "far_awsBucketLink": "https://fixed-asset-flookup.s3.ap-south-1.amazonaws.com/"
 }

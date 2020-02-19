@@ -56,7 +56,6 @@ class AssetInformation extends Form {
       const category = this.props.match.params.category;
       const assetId = this.props.match.params.id;
       const { data: assetDataFrom } = await getAssetById(category, assetId);
-
       this.setState({
         data: assetDataFrom[0],
         id: assetId
@@ -100,10 +99,10 @@ class AssetInformation extends Form {
   handleSave = async () => {
     const data = { ...this.state.data };
     try {
-      const result = await sendEditedData(data);
-      toast.info("Updated successfully");
+      const { data: result } = await sendEditedData(data, this.state.id);
+      toast.success(result.res);
     } catch (error) {
-      toast.error("Update failed!");
+      toast.error(error.response.data.err);
     }
   };
 
@@ -125,15 +124,7 @@ class AssetInformation extends Form {
   render() {
     const data = JSON.parse(getUser());
     const dbName = data.orgDatabase;
-    const {
-      description,
-      id,
-      other,
-      category,
-      location,
-      quantity,
-      vat
-    } = this.state.data;
+    const { id } = this.state;
     const image = this.state.data.imageUri;
     const { user } = this.props;
 
@@ -153,16 +144,7 @@ class AssetInformation extends Form {
                   alignContent="center"
                 >
                   <div id="printme">
-                    <QRCodeGenerator
-                      id={id}
-                      description={description}
-                      other={other}
-                      location={location}
-                      quantity={quantity}
-                      category={category}
-                      vat={vat}
-                      keyValue={dbName}
-                    />
+                    <QRCodeGenerator id={id} keyValue={dbName} />
                   </div>
                   <button onClick={() => this.printOrder()}>Print</button>
                   <div className="upload-btn-style">
@@ -177,14 +159,14 @@ class AssetInformation extends Form {
                 <Grid item xs={12} md={4} lg={4}>
                   <span>
                     <div>
-                      <ModalImage className="image-upload-style" 
-                      small={image}
-                      large={image}
-                      alt="Image Preview" />
+                      <ModalImage
+                        className="image-upload-style"
+                        small={image}
+                        large={image}
+                        alt="Image Preview"
+                      />
                     </div>
-                    <div>
-                      {/* <span>Image Preview</span> */}
-                    </div>
+                    <div>{/* <span>Image Preview</span> */}</div>
                   </span>
                 </Grid>
               </Grid>

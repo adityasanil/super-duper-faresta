@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Grid, Button } from "@material-ui/core";
-
+import HowToRegIcon from '@material-ui/icons/HowToReg';
 import InputField from "components/form/inputField";
 
 class OrgDataFields extends Component {
@@ -12,7 +12,7 @@ class OrgDataFields extends Component {
         <form onSubmit={onSubmit}>
           <div>
             <Grid container spacing={3}>
-              <Grid item xs={6} md={4} lg={3}>
+              <Grid item xs={12} md={4} lg={3}>
                 <InputField
                   required
                   id="companyName"
@@ -22,7 +22,7 @@ class OrgDataFields extends Component {
                   autoFocus
                 />
               </Grid>
-              <Grid item xs={6} md={4} lg={3}>
+              <Grid item xs={12} md={4} lg={3}>
                 <InputField
                   required
                   id="panNumber"
@@ -31,7 +31,7 @@ class OrgDataFields extends Component {
                   onChange={onChange}
                 />
               </Grid>
-              <Grid item xs={6} md={4} lg={3}>
+              <Grid item xs={12} md={4} lg={3}>
                 <InputField
                   required
                   id="orgEmail"
@@ -41,7 +41,7 @@ class OrgDataFields extends Component {
                   onChange={onChange}
                 />
               </Grid>
-              <Grid item xs={6} md={4} lg={3}>
+              <Grid item xs={12} md={4} lg={3}>
                 <InputField
                   required
                   id="contact"
@@ -50,7 +50,7 @@ class OrgDataFields extends Component {
                   onChange={onChange}
                 />
               </Grid>
-              <Grid item xs={6} md={4} lg={3}>
+              <Grid item xs={12} md={4} lg={3}>
                 <InputField
                   required
                   id="address"
@@ -59,7 +59,7 @@ class OrgDataFields extends Component {
                   onChange={onChange}
                 />
               </Grid>
-              <Grid item xs={6} md={4} lg={3}>
+              <Grid item xs={12} md={4} lg={3}>
                 <InputField
                   required
                   id="name"
@@ -68,7 +68,7 @@ class OrgDataFields extends Component {
                   onChange={onChange}
                 />
               </Grid>
-              <Grid item xs={6} md={4} lg={3}>
+              <Grid item xs={12} md={4} lg={3}>
                 <InputField
                   required
                   id="email"
@@ -78,7 +78,7 @@ class OrgDataFields extends Component {
                   onChange={onChange}
                 />
               </Grid>
-              <Grid item xs={6} md={4} lg={3}>
+              <Grid item xs={12} md={4} lg={3}>
                 <InputField
                   required
                   id="designation"
@@ -105,7 +105,7 @@ class OrgDataFields extends Component {
                   </Select>
                 </FormControl>
               </Grid> */}
-              <Grid item xs={6} md={3} lg={3}>
+              <Grid item xs={12} md={3} lg={3}>
                 <select
                   className="select-button-padding select-button-org-styles"
                   name="role"
@@ -119,7 +119,7 @@ class OrgDataFields extends Component {
                 </select>
               </Grid>
 
-              <Grid item xs={6} md={3} lg={3}>
+              <Grid item xs={12} md={3} lg={3}>
                 <select
                   className="select-button-padding select-button-org-styles"
                   name="userType"
@@ -135,7 +135,12 @@ class OrgDataFields extends Component {
 
               <Grid item xs={12} lg={12}>
                 <div>
-                  <Button variant="contained" color="secondary" type="submit">
+                  <Button 
+                   startIcon={<HowToRegIcon />}
+                   variant="contained" 
+                   color="secondary"
+                   type="submit"
+                   className="create-button-icon">
                     Register
                   </Button>
                 </div>

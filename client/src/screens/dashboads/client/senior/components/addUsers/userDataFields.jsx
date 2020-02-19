@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Grid, Button } from "@material-ui/core";
+import HowToRegIcon from '@material-ui/icons/HowToReg';
 
 import InputField from "components/form/inputField";
 
@@ -60,7 +61,7 @@ class userDataFields extends Component {
                 onChange={onChange}
               />
             </Grid>
-            <Grid item xs={6} md={3} lg={4} className="select-button-padding">
+            <Grid item xs={6} md={8} lg={6} className="select-button-padding">
               <select
                 name="role"
                 onChange={onChange}
@@ -74,9 +75,14 @@ class userDataFields extends Component {
                 <option value="auditor">Auditor</option>
               </select>
             </Grid>
-            <Grid item xs={12} md={4} lg={4}>
+            <Grid item xs={12} md={12} lg={12}>
               <div>
-                <Button variant="contained" color="secondary" type="submit">
+                <Button 
+                 startIcon={<HowToRegIcon />}
+                 className="create-button-icon button-responsive-text"
+                 variant="contained"
+                 color="secondary"
+                 type="submit">
                   Register User
                 </Button>
               </div>

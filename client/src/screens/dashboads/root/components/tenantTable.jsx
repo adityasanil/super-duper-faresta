@@ -8,6 +8,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 
+
 const styles = {
   table: {
     minWidth: 750
@@ -32,10 +33,10 @@ class TenantTable extends Component {
           <TableHead>
             <TableRow>
               <TableCell align="center" className={classes.tableHeader}>
-                Name
+               Name
               </TableCell>
               <TableCell align="center" className={classes.tableHeader}>
-                Email
+               Email
               </TableCell>
               <TableCell align="center" className={classes.tableHeader}>
                 Contact

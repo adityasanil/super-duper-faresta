@@ -8,6 +8,7 @@ import {
   Button,
   Container
 } from "@material-ui/core";
+import CreateIcon from '@material-ui/icons/Create';
 
 import Form from "../../../../components/form/form";
 
@@ -120,7 +121,11 @@ class IAM extends Form {
                         </Grid>
                         <Grid item xs={12} lg={12}>
                           <div>
-                            <Button variant="contained" color="secondary">
+                            <Button
+                             className="create-button-icon" 
+                             variant="contained"
+                             color="secondary"
+                             startIcon={<CreateIcon />}>
                               Create
                             </Button>
                           </div>
