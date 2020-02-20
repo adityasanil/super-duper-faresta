@@ -7,6 +7,7 @@ import {
   Redirect
 } from "react-router-dom";
 import "assets/css/formstyles.css";
+import "assets/css/loginstyles.css";
 
 // Local imports
 // Services

@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Button, Grid, Box, Container } from "@material-ui/core";
+import { Button, Grid, Box, Container, Typography } from "@material-ui/core";
 import SaveIcon from "@material-ui/icons/Save";
 
 import config from "config.js";
@@ -7,11 +7,13 @@ import Dialog from "components/dialog";
 import Form from "components/form/form";
 import http from "services/httpServices";
 import { getUser } from "services/getToken";
+import SwitchSelector from "components/switch";
 import AssetInfoFields from "./assetInfoFields";
 import ImageUpload from "components/imageUpload";
 import { getAssetById } from "services/getAssets";
 import { deleteAsset } from "services/deleteAsset";
 import { sendEditedData } from "services/sendAssetData";
+import { verifyAsset } from "services/assetVerification";
 import QRCodeGenerator from "components/qrCodeGenerator";
 
 import ModalImage from "react-modal-image";
@@ -122,11 +124,31 @@ class AssetInformation extends Form {
     }
   };
 
+  handleChangeSwitch = () => {
+    const data = { ...this.state.data };
+    data["verifiedStatus"] = !data["verifiedStatus"];
+    this.setState({ data }, () => {
+      this.verifyAssetChange();
+    });
+  };
+
+  verifyAssetChange = async () => {
+    const { id } = this.state;
+    const { verifiedStatus } = this.state.data;
+    try {
+      const result = await verifyAsset(verifiedStatus, id);
+      if (result.status == 200) toast.success(result.data.res);
+    } catch (error) {
+      const { data } = error.response;
+      toast.error(data.err);
+    }
+  };
+
   render() {
     const data = JSON.parse(getUser());
     const dbName = data.orgDatabase;
     const { id } = this.state;
-    const image = this.state.data.imageUri;
+    const { verifiedStatus, imageUri } = this.state.data;
     const { user } = this.props;
 
     return (
@@ -155,9 +177,34 @@ class AssetInformation extends Form {
                 <Grid item>
                   <ModalImage
                     className="image-upload-style"
-                    small={image}
-                    large={image}
+                    small={imageUri}
+                    large={imageUri}
                     alt="Image Preview"
+                  />
+                </Grid>
+              </Grid>
+              <Grid
+                container
+                justify="flex-end"
+                direction="row"
+                alignItems="center"
+                spacing={2}
+              >
+                <Grid item>
+                  <Typography
+                    variant="overline"
+                    display="block"
+                    style={{ fontWeight: "500", fontSize: 15 }}
+                  >
+                    Asset Verified:
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <SwitchSelector
+                    onChangeHandler={
+                      user.role === "auditor" ? this.handleChangeSwitch : null
+                    }
+                    checked={verifiedStatus}
                   />
                 </Grid>
               </Grid>
@@ -175,11 +222,11 @@ class AssetInformation extends Form {
                     color="secondary"
                     startIcon={<SaveIcon />}
                     onClick={this.handleSave}
-                    disabled={
-                      user.role === "junior" || user.role === "auditor"
-                        ? false
-                        : true
-                    }
+                    // disabled={
+                    //   user.role === "junior" || user.role === "auditor"
+                    //     ? false
+                    //     : true
+                    // }
                   >
                     Save
                   </Button>
