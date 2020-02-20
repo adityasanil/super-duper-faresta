@@ -14,6 +14,7 @@ const sendMail = require("./routes/sendMail");
 const getAssets = require("./routes/getAssets");
 const fileUpload = require("./routes/fileUpload");
 const deleteAsset = require("./routes/deleteAsset");
+const verifyAsset = require("./routes/verifyAsset");
 const saveAssetsList = require("./routes/saveAssetsList");
 
 // Check if the jwt private key is set or not
@@ -56,6 +57,7 @@ app.use("/connect", connect);
 app.use("/sendMail", sendMail);
 app.use("/getAssets", getAssets);
 app.use("/imageUpload", fileUpload);
+app.use("/verifyAsset", verifyAsset);
 app.use("/deleteAsset", deleteAsset);
 app.use("/saveAssets", saveAssetsList);
 

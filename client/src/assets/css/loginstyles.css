@@ -36,7 +36,9 @@
 .login-background {
   background-image: url("../images/brand/layout_pattern.png"),
     radial-gradient(closest-corner, rgb(15, 114, 68) 54%, rgb(17, 97, 73) 100%) !important;
-  min-height: 100vh;
+  @media only screen and (max-width: 480px) {
+    display: none;
+  }
 }
 .login-logo-styles {
   padding-left: 20px;

@@ -159,7 +159,7 @@
   background-color: #009933 !important;
   padding-left: 20px !important;
   padding-right: 20px !important;
-  color:white !important;
+  color: white !important;
   font-weight: bold !important;
 }
 .qr-grid-style {
@@ -192,7 +192,7 @@
   border-width: 2px;
   border-radius: 8px;
 }
-.select-button-org-styles{
+.select-button-org-styles {
   height: 50px;
   font-size: 17px;
   background-color: white;
@@ -200,130 +200,127 @@
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   min-width: 240px !important;
 }
-.upload-btn-style > form > div > div{
-    margin-right: 500px !important;
-    margin-top: 20px !important;
-}
-.save-button-align-style{
-    text-align: center;
+/*  */
+.save-button-align-style {
+  text-align: center;
 }
 .asset-header-style > span {
-    text-decoration: underline;
+  text-decoration: underline;
 }
-.upload-grid-align{
-    text-align: center;
+.upload-grid-align {
+  text-align: center;
 }
-.upload-btn-style{
-    padding-top: 20px;
+.upload-btn-style {
+  padding-top: 20px;
 }
 
-.send-email-button-style{
-    font-weight: bold !important;
+.send-email-button-style {
+  font-weight: bold !important;
 }
 .email-field-align > div {
-    padding-right: 25px;
+  padding-right: 25px;
 }
-.iam-select-style{
+.iam-select-style {
   padding-top: 30px !important;
 }
-.asset-text-field{
+.asset-text-field {
   padding-right: 20px !important;
   padding-top: 20px !important;
   padding-bottom: 20px !important;
 }
-.remark-text-field{
+.remark-text-field {
   padding: 20px !important;
   padding-left: 0px !important;
 }
-.image-upload-style{
+.image-upload-style {
   max-width: 200px !important;
   max-height: 350px !important;
+  border-radius: 7%;
 }
-.upload-btn-style > form > label > input{
+.upload-btn-style > form > label > input {
   padding-bottom: 15px !important;
 }
-.asset-delete-style{
+.asset-delete-style {
   padding-right: 20px !important;
 }
-.fullscreen-scroll > div{
+.fullscreen-scroll > div {
   overflow-y: scroll !important;
   background: white !important;
 }
-.qr-print{
+.qr-print {
   padding-bottom: 15px;
 }
-.create-button-icon{
+.create-button-icon {
   font-weight: bold !important;
 }
-
 
 /* Resposive Css */
 
 /* Mobile Screen */
 @media screen and (max-width: 390px) {
-  .asset-delete-style{
+  .asset-delete-style {
     padding-top: 20px !important;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .asset-delete-style{
+  .asset-delete-style {
     padding-top: 0px;
   }
-  .key-text-align{
+  .key-text-align {
     word-wrap: break-word;
     padding-bottom: 20px;
   }
-  .email-field-align > div{
+  .email-field-align > div {
     padding-bottom: 20px;
   }
-  .button-font-style{
+  .button-font-style {
     font-size: 10px !important;
   }
-  .send-email-button-style{
+  .send-email-button-style {
     margin-left: 0px !important;
   }
-  .description-button-style{
+  .description-button-style {
     font-size: 10px !important;
     font-weight: 600 !important;
   }
-  .qr-print-button-style{
+  .qr-print-button-style {
     padding-left: 0px !important;
   }
-  .qr-info-list-style{
+  .qr-info-list-style {
     padding-left: 0px !important;
     word-break: break-all;
     padding-top: 20px;
   }
-  .sr-no-style{
+  .sr-no-style {
     padding-top: 15px !important;
   }
-  .select-button-styles{
+  .select-button-styles {
     width: 220% !important;
     height: 100% !important;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 5px;
   }
-  .iam-select-style{
+  .iam-select-style {
     padding-top: 0px !important;
   }
-  .select-button-org-styles{
+  .select-button-org-styles {
     min-width: 0px !important;
     width: 100% !important;
   }
-  .select-button-padding{
+  .select-button-padding {
     padding-top: 0px !important;
   }
-  .button-responsive-text{
+  .button-responsive-text {
     font-size: 9px !important;
   }
 }
 
 /* iPad Portrait */
 
-@media screen and (min-width:767px) and (max-width: 768px) {
-  .select-button-styles{
+@media screen and (min-width: 767px) and (max-width: 768px) {
+  .select-button-styles {
     width: 50% !important;
     height: 100% !important;
     padding: 10px !important;
@@ -332,8 +329,8 @@
 
 /* iPad Landscape */
 
-@media screen and (max-width: 1024px){
-  .select-button-styles{
+@media screen and (max-width: 1024px) {
+  .select-button-styles {
     padding: 10px !important;
     height: 100% !important;
   }

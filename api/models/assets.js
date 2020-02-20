@@ -34,7 +34,7 @@ const assetSchema = new mongoose.Schema({
   wdv_closing: { type: String },
   number_of_days: { type: String },
   date: { type: Date, default: Date.now },
-  imageUri: { type: String },
+  imageUri: { type: String, default: null },
   verifiedStatus: { type: Boolean, default: false },
   remarkJunior_1: { type: String },
   remarkJunior_2: { type: String },
