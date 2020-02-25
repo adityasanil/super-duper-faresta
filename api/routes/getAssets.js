@@ -4,15 +4,20 @@ const router = express.Router();
 const { Asset } = require("../models/assets");
 
 router.get("/", async (req, res) => {
-  const data = await Asset.find().select("-date -identifier -element -__v");
-
-  res.send(data);
+  try {
+    const data = await Asset.find().select("-date -identifier -element -__v");
+    res.send(data);
+  } catch (error) {
+    res.status(500).send("Unable to fetch assets");
+  }
 });
 
 router.get("/app/:id", async (req, res) => {
   const assetId = req.params.id;
   try {
-    const data = await Asset.find({ _id: assetId }).select("-__v -date");
+    const data = await Asset.find({ _id: assetId }).select(
+      "-element -__v -date"
+    );
     res.send(data);
   } catch (error) {
     res.status(500).send("Request failed");

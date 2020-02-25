@@ -10,6 +10,7 @@ app.use(express.json({ limit: "50mb" }));
 
 //Local imports
 const connect = require("./routes/connect");
+const reports = require("./routes/reports");
 const sendMail = require("./routes/sendMail");
 const getAssets = require("./routes/getAssets");
 const fileUpload = require("./routes/fileUpload");
@@ -53,12 +54,13 @@ mongoose.set("useUnifiedTopology", true);
 mongoose.set("useCreateIndex", true);
 
 // Routes
+app.use("/reports", reports);
 app.use("/connect", connect);
 app.use("/sendMail", sendMail);
 app.use("/getAssets", getAssets);
 app.use("/imageUpload", fileUpload);
-app.use("/verifyAsset", verifyAsset);
 app.use("/deleteAsset", deleteAsset);
+app.use("/verifyAsset", verifyAsset);
 app.use("/saveAssets", saveAssetsList);
 
 // Port
