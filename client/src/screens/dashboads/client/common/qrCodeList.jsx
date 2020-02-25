@@ -75,7 +75,9 @@ class Code extends Component {
                       </Grid>
                     </Grid>
                     <Grid className="sr-no-style" container direction="column">
-                      <div>SR: {i}</div>
+                      <Typography variant="p" component="h3">
+                        SR: {i}
+                      </Typography>
                     </Grid>
                   </Grid>
                   <br />
