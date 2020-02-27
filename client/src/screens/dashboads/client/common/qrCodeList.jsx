@@ -121,7 +121,7 @@ class QRCodeList extends Component {
             <Box className={classes.boxBorder}>
               {
                 <Button
-                  className="description-button-style"
+                  className="button-font-style"
                   onClick={this.setDescription}
                   color="primary"
                   variant="contained"
@@ -135,7 +135,7 @@ class QRCodeList extends Component {
                   // eslint-disable-next-line jsx-a11y/anchor-is-valid
                   <a
                     href="#"
-                    className="qr-print-button-style"
+                    className="button-font-style"
                     style={{ textDecoration: "none", paddingLeft: "20px" }}
                   >
                     <Button

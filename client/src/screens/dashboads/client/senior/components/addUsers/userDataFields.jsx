@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Grid, Button } from "@material-ui/core";
-import HowToRegIcon from '@material-ui/icons/HowToReg';
+import HowToRegIcon from "@material-ui/icons/HowToReg";
 
 import InputField from "components/form/inputField";
 
@@ -77,12 +77,12 @@ class userDataFields extends Component {
             </Grid>
             <Grid item xs={12} md={12} lg={12}>
               <div>
-                <Button 
-                 startIcon={<HowToRegIcon />}
-                 className="create-button-icon button-responsive-text"
-                 variant="contained"
-                 color="secondary"
-                 type="submit">
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  type="submit"
+                  className="button-font-style"
+                >
                   Register User
                 </Button>
               </div>
