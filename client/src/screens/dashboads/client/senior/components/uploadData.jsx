@@ -87,7 +87,6 @@ class UploadData extends Component {
                     color="secondary"
                     onClick={this.handleSaveData}
                   >
-                    <CloudDoneSharpIcon />
                     &nbsp; Save to DataBase
                   </Button>
                 </div>

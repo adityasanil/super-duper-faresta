@@ -67,9 +67,9 @@ class ViewData extends Form {
           <main className={classes.content}>
             <Container maxWidth="lg">
               <br />
-              <Box className={classes.boxBorder}>
+              {/* <Box className={classes.boxBorder}>
                 <KeyForApp userData={userData} />
-              </Box>
+              </Box> */}
               <br />
               <Box className={classes.boxBorder}>
                 <div>
@@ -92,7 +92,7 @@ class ViewData extends Form {
                             backgroundColor: "white",
                             color: "#009933"
                           }}
-                          endIcon={<GetAppRoundedIcon />}
+                          // endIcon={<GetAppRoundedIcon />}
                         >
                           Download CSV
                         </Button>
