@@ -25,6 +25,7 @@ const Input = ({
   helperText,
   InputProps,
   className,
+  margin,
   defaultValue
 }) => {
   const classes = useStyles();
@@ -41,7 +42,7 @@ const Input = ({
         autoFocus={autoFocus}
         fullWidth
         variant="outlined"
-        margin="normal"
+        margin={margin}
         label={label}
         required={required}
         size={size}
