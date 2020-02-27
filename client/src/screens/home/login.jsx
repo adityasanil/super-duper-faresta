@@ -58,6 +58,7 @@ class Login extends Form {
                     onChange={this.handleOnChange}
                     type="email"
                     size="small"
+                    margin="normal"
                   />
                   <InputField
                     required
@@ -68,9 +69,10 @@ class Login extends Form {
                     autoComplete="current-password"
                     onChange={this.handleOnChange}
                     size="small"
+                    margin="normal"
                   />
                   <Grid container direction="row" justify="space-between">
-                    <>
+                    <Fragment>
                       <Grid item>
                         <Button
                           type="submit"
@@ -95,7 +97,7 @@ class Login extends Form {
                           Forgot password?
                         </Link>
                       </Grid>
-                    </>
+                    </Fragment>
                   </Grid>
                 </form>
               </Grid>
